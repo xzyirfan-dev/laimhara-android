@@ -1324,11 +1324,54 @@ func _warp_rows(cost_scroll: bool) -> Array:
 	r.append({"t": "Kota Velamina", "s": "Zona aman", "ic": UiKit.icon("g_map"), "f": cb2, "d": world.map.id == 0})
 	return r
 
-func _menu_warp() -> Array:
-	return _warp_rows(false)
+func _menu_warp() -> Control:
+	return _warp_picker(false)
 
-func _menu_warp_scroll() -> Array:
-	return _warp_rows(true)
+func _menu_warp_scroll() -> Control:
+	return _warp_picker(true)
+
+func _warp_picker(cost_scroll: bool) -> Control:
+	var root_box := VBoxContainer.new()
+	root_box.add_theme_constant_override("separation", 8)
+	var hint := "Pilih map tujuan" if not cost_scroll else "Pilih map tujuan • 1 Warp Scroll"
+	root_box.add_child(UiKit.lbl(hint, 22, UiKit.TXT_DIM, HORIZONTAL_ALIGNMENT_CENTER, true))
+	var grid := GridContainer.new()
+	grid.columns = 2
+	grid.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	grid.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	grid.add_theme_constant_override("h_separation", 8)
+	grid.add_theme_constant_override("v_separation", 8)
+	for m in Data.MAPS:
+		var map_id: int = int(m.id)
+		var map_name: String = String(m.name)
+		var map_min: int = int(m.min)
+		var map_max: int = int(m.max)
+		var is_town: bool = bool(m.town)
+		var unlocked: bool = is_town or G.visited.has(map_id) or G.lv >= map_min - 10
+		var current: bool = not world.map.get("dungeon", false) and world.map.id == map_id
+		var can_warp: bool = unlocked and not current and (not cost_scroll or is_town or G.stack_count("warp") > 0)
+		var text := "%s\n%s" % [map_name, "Zona aman" if is_town else "Lv %d – %d" % [map_min, map_max]]
+		if current:
+			text += "\n(LOKASI SAAT INI)"
+		elif not unlocked:
+			text += "\nTERKUNCI"
+		elif cost_scroll and not is_town:
+			text += "\nWarp x%d" % G.stack_count("warp")
+		var b := UiKit.btn(text, "gold" if current else "normal", Vector2(0, 86), 19)
+		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		b.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		b.disabled = not can_warp
+		b.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		b.tooltip_text = "Map %d" % map_id
+		b.pressed.connect(func():
+			if cost_scroll and not is_town and not G.take_stack("warp", 1):
+				_on_toast("Warp Scroll habis", false)
+				return
+			close_menu()
+			world.warp(map_id))
+		grid.add_child(b)
+	root_box.add_child(grid)
+	return root_box
 
 func _menu_dungeon() -> Array:
 	var d: Dictionary = Data.dungeon_for(world.map.id)
