@@ -477,10 +477,25 @@ func snipe_range() -> float:
 		return 0.0
 	return 2.0 + float(skill_lv("snipe") - 1) * 1.75
 
+func eagle_bonus() -> float:
+	if lv < 30:
+		return 0.0
+	return 1.0 + float(skill_lv("eagle_eye") - 1) * 0.55
+
+func overcharge_bonus() -> float:
+	if lv < 120:
+		return 0.0
+	return 0.08 + float(skill_lv("overcharge") - 1) * 0.035
+
+func phase_evade_bonus() -> float:
+	if lv < 220:
+		return 0.0
+	return 0.02 + float(skill_lv("phase_shift") - 1) * 0.012
+
 func atk() -> float:
 	var s := float(str_val())
 	var a: float = (item_power(weapon) + 2.5 * float(lv)) * (1.0 + s / (s + 600.0)) * set_mult()
-	a *= 1.0 + marks_bonus() + pen_bonus() + bonus("dmg") / 100.0
+	a *= 1.0 + marks_bonus() + pen_bonus() + overcharge_bonus() + bonus("dmg") / 100.0
 	return a
 
 func def_value() -> float:
@@ -491,7 +506,7 @@ func def_value() -> float:
 	return d * (1.0 + bonus("def") / 100.0) * set_mult()
 
 func evade_chance() -> float:
-	return minf(0.4, bonus("evade") / 100.0)
+	return minf(0.5, bonus("evade") / 100.0 + phase_evade_bonus())
 
 func move_mult() -> float:
 	return 1.0 + minf(0.5, bonus("speed") / 100.0)

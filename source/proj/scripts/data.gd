@@ -40,15 +40,23 @@ static func dungeon_for(map_id: int) -> Dictionary:
 	}
 
 const SKILLS := [
-	{"id": "marks", "name": "Marksmanship (pasif: bonus damage)", "short": "", "unlock": 1, "max": 25, "kind": "p", "cd": 0.0, "f": 0.0},
-	{"id": "snipe", "name": "Sniping (pasif: jangkauan)", "short": "", "unlock": 15, "max": 5, "kind": "p", "cd": 0.0, "f": 0.0},
-	{"id": "pen", "name": "Penetration (pasif: tembus DEF)", "short": "", "unlock": 110, "max": 5, "kind": "p", "cd": 0.0, "f": 0.0},
+		{"id": "marks", "name": "Marksmanship (pasif: bonus damage)", "short": "", "unlock": 1, "max": 25, "kind": "p", "cd": 0.0, "f": 0.0},
+		{"id": "snipe", "name": "Sniping (pasif: jangkauan)", "short": "", "unlock": 15, "max": 5, "kind": "p", "cd": 0.0, "f": 0.0},
+		{"id": "pen", "name": "Penetration (pasif: tembus DEF)", "short": "", "unlock": 110, "max": 5, "kind": "p", "cd": 0.0, "f": 0.0},
+		{"id": "eagle_eye", "name": "Eagle Eye (pasif: presisi)", "short": "", "unlock": 30, "max": 10, "kind": "p", "cd": 0.0, "f": 0.0},
+		{"id": "overcharge", "name": "Overcharge Core (pasif: damage)", "short": "", "unlock": 120, "max": 10, "kind": "p", "cd": 0.0, "f": 0.0},
+		{"id": "phase_shift", "name": "Phase Shift (pasif: evasi)", "short": "", "unlock": 220, "max": 10, "kind": "p", "cd": 0.0, "f": 0.0},
 	{"id": "power", "name": "Tembakan Kuat", "short": "Kuat", "unlock": 1, "max": 25, "kind": "a", "cd": 3.0, "f": 1.0},
 	{"id": "shield", "name": "Electric Shield", "short": "Perisai", "unlock": 15, "max": 25, "kind": "a", "cd": 20.0, "f": 1.5},
 	{"id": "semi", "name": "Semi-automatic Fire", "short": "Semi", "unlock": 50, "max": 25, "kind": "a", "cd": 4.0, "f": 1.5},
 	{"id": "frozen", "name": "Frozen Shot", "short": "Beku", "unlock": 101, "max": 25, "kind": "a", "cd": 6.0, "f": 2.0},
 	{"id": "air", "name": "Air Raid", "short": "Raid", "unlock": 200, "max": 20, "kind": "a", "cd": 12.0, "f": 3.0},
-	{"id": "fire", "name": "Fire Blindly", "short": "Api", "unlock": 300, "max": 30, "kind": "a", "cd": 20.0, "f": 4.0},
+		{"id": "fire", "name": "Fire Blindly", "short": "Api", "unlock": 300, "max": 30, "kind": "a", "cd": 20.0, "f": 4.0},
+		{"id": "pierce", "name": "Piercing Barrage", "short": "Pierce", "unlock": 40, "max": 25, "kind": "a", "cd": 7.0, "f": 2.2},
+		{"id": "gravity", "name": "Gravity Well", "short": "Gravitasi", "unlock": 130, "max": 20, "kind": "a", "cd": 15.0, "f": 3.0},
+		{"id": "prism", "name": "Crystal Prism", "short": "Prism", "unlock": 180, "max": 20, "kind": "a", "cd": 18.0, "f": 2.5},
+		{"id": "meteor", "name": "Meteor Salvo", "short": "Meteor", "unlock": 240, "max": 20, "kind": "a", "cd": 24.0, "f": 4.0},
+		{"id": "void", "name": "Void Rift", "short": "Void", "unlock": 350, "max": 15, "kind": "a", "cd": 30.0, "f": 5.0},
 ]
 
 const STACK_NAMES := {
@@ -119,6 +127,14 @@ const SKILL_DESC := {
 	"frozen": "Tembakan beku: damage besar dan memperlambat target.",
 	"air": "Air Raid: hujan peluru pada semua musuh di sekitar.",
 	"fire": "Fire Blindly: tembakan membabi buta ke banyak target di area luas.",
+	"eagle_eye": "Mata elang memperbesar jangkauan serang dan membuat setiap tembakan lebih presisi.",
+	"overcharge": "Inti EP melampaui batas aman. Bonus damage meningkat dan proyektil meninggalkan jejak energi.",
+	"phase_shift": "Tubuh bergeser sepersekian detik dari dimensi ini, meningkatkan peluang menghindar.",
+	"pierce": "Piercing Barrage: rentetan peluru energi menembus beberapa musuh dalam satu garis.",
+	"gravity": "Gravity Well: pusaran gravitasi menghantam dan menarik musuh di sekitar penembak.",
+	"prism": "Crystal Prism: enam sinar prismatik membelah arena dan menghantam target terdekat.",
+	"meteor": "Meteor Salvo: bombardir meteor EP menghujani area luas dengan ledakan berantai.",
+	"void": "Void Rift: retakan dimensi melepaskan badai energi gelap berulang kali.",
 }
 
 const MAP_LORE := {

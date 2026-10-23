@@ -166,14 +166,19 @@ func _pads() -> Array:
 	var ac := Vector2(s.x - 118, s.y - 118)
 	out.append({"id": "atk", "pos": ac, "r": 68.0, "t": "TEMBAK"})
 	var acts := Data.actives()
-	var ang1 := [180.0, 150.0, 120.0]
-	var ang2 := [165.0, 135.0, 105.0]
+	var ring_counts := [4, 4, 3]
+	var ring_angles := [[186.0, 158.0, 130.0, 102.0], [174.0, 146.0, 118.0, 90.0], [162.0, 132.0, 102.0]]
+	var ring_radii := [132.0, 190.0, 248.0]
+	var ring := 0
+	var in_ring := 0
 	for i in acts.size():
-		var ring := i / 3
-		var k := i % 3
-		var a: float = deg_to_rad(float((ang1 if ring == 0 else ang2)[k]))
-		var rad := 140.0 if ring == 0 else 228.0
+		if in_ring >= ring_counts[ring]:
+			ring += 1
+			in_ring = 0
+		var a: float = deg_to_rad(float(ring_angles[ring][in_ring]))
+		var rad: float = ring_radii[ring]
 		out.append({"id": "s%d" % i, "pos": ac + Vector2(cos(a), -sin(a)) * rad, "r": 36.0, "t": acts[i].short})
+		in_ring += 1
 	out.append({"id": "auto", "pos": ac + Vector2(58, -140), "r": 32.0, "t": "AUTO"})
 	out.append({"id": "hunt", "pos": ac + Vector2(58, -214), "r": 32.0, "t": "HUNT"})
 	var cx := s.x * 0.5 - 20.0
@@ -600,6 +605,8 @@ func _rows_view(rows: Array) -> Control:
 func _icon_of(v) -> Texture2D:
 	if v is Texture2D:
 		return v
+	if v == null:
+		return UiKit.icon("g_skill")
 	return UiKit.stack_icon(String(v))
 
 func _row_node(r: Dictionary) -> Control:
