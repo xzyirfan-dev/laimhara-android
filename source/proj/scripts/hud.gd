@@ -993,13 +993,8 @@ func _bag_right() -> Control:
 func _junk_items() -> Array:
 	var out: Array = []
 	for it in G.bag:
-		if it.setn == 0 and it.opts.is_empty() and it.plus == 0 and int(it.rar) < 2 and not G.is_upgrade(it):
-			var has_gem := false
-			for g in it.soc:
-				if String(g) != "":
-					has_gem = true
-			if not has_gem:
-				out.append(it)
+		if G.sell_filter_allowed(it):
+			out.append(it)
 	return out
 
 func _auto_equip() -> int:
@@ -1281,15 +1276,39 @@ func _menu_settings() -> Array:
 	r.append({"t": "Rate Drop: x%d" % G.settings.drop_mult, "s": "x6 = +500%", "ic": UiKit.icon("gem"), "f": func():
 		G.settings.drop_mult = dm[(dm.find(int(G.settings.drop_mult)) + 1) % 4]
 		refresh()})
-	for e in [["death_penalty", "Penalti mati (-0.5% Laima)"], ["auto_potion", "Auto-Potion"], ["auto_sell", "Auto-jual gear non-upgrade"], ["auto_attack", "Auto-serang"], ["auto_hunt", "Auto-Hunt"]]:
+	for e in [["death_penalty", "Penalti mati (-0.5% Laima)"], ["auto_potion", "Auto-Potion"], ["auto_sell", "Auto-jual (filter aktif)"], ["auto_attack", "Auto-serang"], ["auto_hunt", "Auto-Hunt"]]:
 		var key: String = e[0]
 		var nm: String = e[1]
 		r.append({"t": nm, "rt": "ON" if G.settings[key] else "OFF", "col": UiKit.GOOD if G.settings[key] else UiKit.TXT_DIM, "f": func():
-			G.settings[key] = not G.settings[key]
-			refresh()})
+				G.settings[key] = not G.settings[key]
+				refresh()})
+	r.append({"t": "Filter Auto-Selling", "s": _auto_sell_summary(), "ic": UiKit.icon("g_sell"), "f": func(): push_menu("Filter Auto-Selling", _menu_auto_sell_filter)})
 	r.append({"t": "Simpan sekarang", "ic": UiKit.icon("g_save"), "f": func():
 		G.save_game()
 		_on_toast("Tersimpan", false)})
+	return r
+
+func _auto_sell_summary() -> String:
+	var rarity: int = clampi(int(G.settings.get("auto_sell_max_rarity", 1)), 0, ItemDb.RARITY_NAME.size() - 1)
+	return "Jual sampai %s, tier ≤ %d" % [ItemDb.RARITY_NAME[rarity], int(G.settings.get("auto_sell_max_tier", 400))]
+
+func _menu_auto_sell_filter() -> Array:
+	var r: Array = []
+	r.append({"label": "Item Set, Option, Plus, socket, dan upgrade dilindungi sesuai sakelar di bawah."})
+	r.append({"t": "Batas rarity", "s": "Rarity sampai batas ini boleh dijual", "rt": ItemDb.RARITY_NAME[int(G.settings.auto_sell_max_rarity)], "f": func():
+		G.settings.auto_sell_max_rarity = (int(G.settings.auto_sell_max_rarity) + 1) % 4
+		refresh()})
+	var tier_options := [10, 50, 100, 200, 320, 400]
+	r.append({"t": "Batas tier", "s": "Item di atas batas selalu disimpan", "rt": "≤ %d" % int(G.settings.auto_sell_max_tier), "f": func():
+		var idx: int = tier_options.find(int(G.settings.auto_sell_max_tier))
+		G.settings.auto_sell_max_tier = tier_options[(idx + 1) % tier_options.size()]
+		refresh()})
+	for e in [["auto_sell_keep_sets", "Simpan item Set"], ["auto_sell_keep_options", "Simpan item ber-Option"], ["auto_sell_keep_plus", "Simpan item Plus"], ["auto_sell_keep_socket", "Simpan item bersocket"], ["auto_sell_keep_upgrades", "Simpan item Upgrade"]]:
+		var key: String = e[0]
+		var title: String = e[1]
+		r.append({"t": title, "rt": "ON" if G.settings[key] else "OFF", "col": UiKit.GOOD if G.settings[key] else UiKit.TXT_DIM, "f": func():
+			G.settings[key] = not G.settings[key]
+			refresh()})
 	return r
 
 func _menu_scroll() -> Array:

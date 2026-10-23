@@ -40,7 +40,9 @@ var capsule_t := 0.0
 var shield_t := 0.0
 var shield_frac := 0.0
 var joy := Vector2.ZERO
-var settings := {"exp_mult": 1000, "drop_mult": 6, "death_penalty": true, "auto_potion": true, "auto_sell": true, "auto_attack": true, "auto_hunt": false}
+var settings := {"exp_mult": 1000, "drop_mult": 6, "death_penalty": true, "auto_potion": true, "auto_sell": true, "auto_attack": true, "auto_hunt": false,
+	"auto_sell_max_rarity": 1, "auto_sell_max_tier": 400, "auto_sell_keep_sets": true, "auto_sell_keep_options": true,
+	"auto_sell_keep_plus": true, "auto_sell_keep_socket": true, "auto_sell_keep_upgrades": true}
 var _uid := 1
 var player_name := "Arken"
 var hair_idx := 0
@@ -323,8 +325,32 @@ func is_upgrade(it: Dictionary) -> bool:
 	var cur: Dictionary = equipped.get(String(it.slot), {})
 	return item_score(it) > item_score(cur)
 
+func auto_sell_allowed(it: Dictionary) -> bool:
+	if not settings.auto_sell:
+		return false
+	return sell_filter_allowed(it)
+
+func sell_filter_allowed(it: Dictionary) -> bool:
+	if int(it.get("tier", 1)) > int(settings.auto_sell_max_tier):
+		return false
+	if int(it.get("rar", 0)) > int(settings.auto_sell_max_rarity):
+		return false
+	if bool(settings.auto_sell_keep_sets) and int(it.get("setn", 0)) > 0:
+		return false
+	if bool(settings.auto_sell_keep_options) and not it.get("opts", []).is_empty():
+		return false
+	if bool(settings.auto_sell_keep_plus) and int(it.get("plus", 0)) > 0:
+		return false
+	if bool(settings.auto_sell_keep_socket):
+		for gid in it.get("soc", []):
+			if String(gid) != "":
+				return false
+	if bool(settings.auto_sell_keep_upgrades) and is_upgrade(it):
+		return false
+	return true
+
 func add_equip(it: Dictionary) -> String:
-	if settings.auto_sell and it.setn == 0 and it.opts.is_empty() and int(it.rar) < 2 and not is_upgrade(it):
+	if auto_sell_allowed(it):
 		laima += sell_value(it)
 		return "sold"
 	if bag.size() >= BAG_MAX:
