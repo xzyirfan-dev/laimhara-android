@@ -23,6 +23,8 @@ var map_min := 1
 var map_max := 20
 var map_sets: Array = []
 var fixed_level := 1
+var dungeon := false
+var drop_tier := 1
 var stat_factor := 1.0
 var exp_factor := 1.0
 var label: Label3D
@@ -49,6 +51,8 @@ func setup(w, spd: Dictionary, mi: Dictionary, k: int, nm: String, off: int) -> 
 	map_min = mi.min
 	map_max = mi.max
 	map_sets = mi.sets
+	dungeon = bool(mi.get("dungeon", false))
+	drop_tier = int(mi.get("drop_tier", map_max))
 	# Level monster berasal dari spot map, bukan level karakter.
 	# Fallback ini menjaga kompatibilitas dengan spawn lama.
 	fixed_level = clampi(int(spd.get("level", map_min + off)), map_min, map_max)

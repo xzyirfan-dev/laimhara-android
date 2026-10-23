@@ -66,7 +66,7 @@ func _mat(c: Color, emissive: bool = false) -> StandardMaterial3D:
 func in_peace(p: Vector3) -> bool:
 	return peace_r > 0.0 and Vector3(p.x, 0, p.z).distance_to(peace_c) < peace_r
 
-func load_map(id: int) -> void:
+func load_map(id: int, dungeon_mode: bool = false) -> void:
 	if map_root != null:
 		map_root.queue_free()
 	monsters.clear()
@@ -77,7 +77,7 @@ func load_map(id: int) -> void:
 	G.map_id = id
 	if not G.visited.has(id):
 		G.visited.append(id)
-	map = Data.MAPS[id]
+	map = Data.dungeon_for(id) if dungeon_mode else Data.MAPS[id].duplicate(true)
 	var th: Dictionary = THEME[id]
 	var sky: Color = map.sky
 	var dark: bool = id == 4 or id == 7 or id == 10
@@ -116,7 +116,11 @@ func load_map(id: int) -> void:
 		_build_wild(id, half)
 		_build_camp()
 		_npc("Pedagang Camp", "camp", Vector3(5, 0, -3), Color(0.9, 0.7, 0.3))
-		_npc("Warp Stone", "gate", Vector3(-5, 0, -3), Color(0.4, 0.8, 1.0))
+		if map.get("dungeon", false):
+			_npc("Pintu Keluar Dungeon", "dungeon_exit", Vector3(-5, 0, -3), Color(1.0, 0.35, 0.5))
+		else:
+			_npc("Warp Stone", "gate", Vector3(-5, 0, -3), Color(0.4, 0.8, 1.0))
+			_npc("Gerbang Dungeon", "dungeon", Vector3(0, 0, -7), Color(0.8, 0.25, 0.9))
 		_build_spawns(half)
 		G.toast.emit("Zona tetap %s - monster Lv %d–%d" % [map.name, int(map.min), int(map.max)], true)
 	if map.town:
@@ -616,7 +620,7 @@ func _build_spawns(half: float) -> void:
 	var mob_count: int = map.mobs.size()
 	if mob_count <= 0:
 		return
-	var rings := 4
+	var rings := 6 if map.get("dungeon", false) else 4
 	var span: int = maxi(0, int(map.max) - int(map.min))
 	for ring_idx in rings:
 		var fixed_level := int(map.min) if span == 0 else int(round(float(map.min) + float(span) * float(ring_idx) / float(rings - 1)))
@@ -624,7 +628,7 @@ func _build_spawns(half: float) -> void:
 			var slot := ring_idx * mob_count + type_idx
 			var a := (TAU * float(slot) / float(rings * mob_count)) + _rng.randf_range(-0.08, 0.08)
 			var r := 22.0 + float(ring_idx) * ((half - 30.0) / float(rings - 1)) + _rng.randf_range(-2.0, 2.0)
-			var elite := ring_idx == rings - 1 and type_idx == mob_count - 1
+			var elite: bool = bool(map.get("dungeon", false)) or (ring_idx == rings - 1 and type_idx == mob_count - 1)
 			spawns.append({
 				"pos": Vector3(cos(a) * r, 0, sin(a) * r),
 				"mon": null,
@@ -659,6 +663,17 @@ func sync_all() -> void:
 
 func warp(id: int) -> void:
 	load_map(id)
+
+func enter_dungeon(id: int) -> void:
+	if id <= 0 or id >= Data.MAPS.size():
+		return
+	load_map(id, true)
+	G.toast.emit("Dungeon dimasuki: %s — kalahkan monster dan boss!" % map.name, true)
+
+func exit_dungeon() -> void:
+	if not map.get("dungeon", false):
+		return
+	load_map(int(map.get("base_id", 0)))
 
 func player_died() -> void:
 	await get_tree().create_timer(1.5).timeout
