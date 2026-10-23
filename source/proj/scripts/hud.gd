@@ -1351,9 +1351,9 @@ func _menu_inv() -> Control:
 func _menu_class_shop() -> Control:
 	var vb := VBoxContainer.new()
 	vb.add_theme_constant_override("separation", 8)
-	vb.add_child(UiKit.lbl("Laima: %s   |   Stok mengikuti level kamu. Ketuk item untuk melihat detail & membeli." % Scaling.fmt(G.laima), 20, UiKit.TXT_DIM))
+	vb.add_child(UiKit.lbl("Laima: %s   |   Stok tetap semua tier. Ketuk item untuk melihat detail & membeli." % Scaling.fmt(G.laima), 20, UiKit.TXT_DIM))
 	var cells: Array = []
-	for t in Scaling.candidate_tiers(G.lv):
+	for t in Data.NPC_EQUIPMENT_TIERS:
 		for slot in ItemDb.SLOTS:
 			var tt: int = t
 			var sl: String = slot
@@ -1400,13 +1400,11 @@ func _buy_stack(id: String, n: int, unit: int) -> void:
 
 func _menu_potion(mult: float) -> Array:
 	var r: Array = []
-	var lk := Scaling.laima_kill(G.lv)
 	r.append({"label": "Laima: %s" % Scaling.fmt(G.laima)})
-	var items := [["hp", 1.5, [10, 50]], ["mp", 1.5, [10, 50]], ["tp", 3.0, [5]], ["warp", 5.0, [5]], ["capsule", 40.0, [1]]]
-	for e in items:
+	for e in Data.NPC_SUPPORT_STOCK:
 		var id: String = e[0]
-		var unit := maxi(10, int(lk * float(e[1]) * mult))
-		for n in e[2]:
+		var unit: int = maxi(1, int(float(e[2]) * mult))
+		for n in e[1]:
 			var nn: int = n
 			r.append({"t": "%s x%d" % [ItemDb.stack_name(id), nn], "s": "Punya %d" % G.stack_count(id), "ic": id, "rt": "%s L" % Scaling.fmt(unit * nn), "d": G.laima < unit * nn, "f": func(): _buy_stack(id, nn, unit)})
 	return r
@@ -1447,7 +1445,6 @@ func _menu_buyback() -> Array:
 
 func _menu_jewel() -> Array:
 	var r: Array = []
-	var lk := Scaling.laima_kill(G.lv)
 	r.append({"label": "Laima: %s\nPermata dipasang ke socket perlengkapan. Aetherial Jewel menambah Option (item tier 350+, maks 3)." % Scaling.fmt(G.laima)})
 	r.append({"t": "Pasang Permata (Socket)", "s": "Pilih item lalu pasang permata", "ic": UiKit.icon("g_socket"), "f": func():
 		push_menu("Pilih item", func(): return _pick_grid(G.all_items(), func(it):
@@ -1456,9 +1453,9 @@ func _menu_jewel() -> Array:
 			push_menu("Socket Permata", func(): return _menu_socket(it)), "Pilih item untuk dipasangi permata."))})
 	r.append({"t": "Gabung Permata", "s": "3 permata sama jadi 1 tingkat lebih tinggi", "ic": "g_ruby3", "f": func(): push_menu("Gabung Permata", _menu_combine)})
 	r.append({"t": "Beli Permata", "s": "Rubi, Topaz, Amethyst, Zamrud, Safir", "ic": "g_topaz2", "f": func(): push_menu("Beli Permata", _menu_gem_shop)})
-	for e in [["aeth4", 10.0], ["aeth3", 30.0], ["aeth2", 80.0]]:
+	for e in [["aeth4", Data.NPC_JEWEL_PRICES.aeth4], ["aeth3", Data.NPC_JEWEL_PRICES.aeth3], ["aeth2", Data.NPC_JEWEL_PRICES.aeth2], ["aeth1", Data.NPC_JEWEL_PRICES.aeth1]]:
 		var id: String = e[0]
-		var unit := int(lk * float(e[1]))
+		var unit: int = int(e[1])
 		r.append({"t": "Beli %s" % ItemDb.stack_name(id), "s": "Punya %d" % G.stack_count(id), "ic": id, "rt": "%s L" % Scaling.fmt(unit), "d": G.laima < unit, "f": func(): _buy_stack(id, 1, unit)})
 	r.append({"t": "Pasang Option pada item (tier 350+)", "ic": UiKit.icon("g_up"), "f": func(): push_menu("Pilih item", _menu_option_list)})
 	return r
@@ -1471,7 +1468,7 @@ func _menu_gem_shop() -> Control:
 	for g in [1, 2]:
 		for t in ItemDb.GEM_TYPES:
 			var gid := ItemDb.gem_id(t, g)
-			var price := int(Scaling.laima_kill(G.lv) * 6.0 * float(g * g))
+			var price: int = int(Data.NPC_GEM_PRICES[g])
 			var sl := ItemSlot.new(96.0)
 			sl.set_stack("g_" + gid, G.gem_stack(gid))
 			sl.tag = Scaling.fmt(price)

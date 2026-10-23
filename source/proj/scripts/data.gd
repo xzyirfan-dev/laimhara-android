@@ -58,6 +58,17 @@ const STACK_NAMES := {
 	"capsule": "Double EXP Capsule (30 mnt)",
 }
 
+# Katalog NPC sengaja tetap. Level karakter hanya menentukan akses map, bukan isi toko.
+const NPC_EQUIPMENT_TIERS := [1, 10, 50, 100, 200, 320, 400]
+const NPC_SUPPORT_STOCK := [
+	["hp", [1, 10, 50, 100], 25], ["mp", [1, 10, 50, 100], 25],
+	["tp", [1, 5, 20], 120], ["warp", [1, 5, 20], 240],
+	["capsule", [1, 3, 10], 2500], ["safety", [1, 3, 10], 5000],
+	["w50", [1, 3, 10], 8000], ["w100", [1, 3, 10], 30000]
+]
+const NPC_GEM_PRICES := {1: 1200, 2: 3600}
+const NPC_JEWEL_PRICES := {"aeth4": 2500, "aeth3": 7500, "aeth2": 20000, "aeth1": 60000}
+
 const W_NAMES := {1: "Pistol Latihan", 10: "Pistol Perunggu", 50: "Senapan Badai", 100: "Senapan Rantai", 200: "Senapan GWH", 320: "Senapan Magralis", 400: "Senapan Ragnok"}
 const A_NAMES := {1: "Zirah Latihan", 10: "Zirah Perunggu", 50: "Zirah Badai", 100: "Zirah Penjaga", 200: "Zirah Tanduk Putih", 320: "Zirah Moriath", 400: "Zirah Ragnok"}
 
