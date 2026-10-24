@@ -57,14 +57,31 @@ const SKILLS := [
 		{"id": "prism", "name": "Crystal Prism", "short": "Prism", "unlock": 180, "max": 20, "kind": "a", "cd": 18.0, "f": 2.5},
 		{"id": "meteor", "name": "Meteor Salvo", "short": "Meteor", "unlock": 240, "max": 20, "kind": "a", "cd": 24.0, "f": 4.0},
 		{"id": "void", "name": "Void Rift", "short": "Void", "unlock": 350, "max": 15, "kind": "a", "cd": 30.0, "f": 5.0},
-]
+	]
 
 const STACK_NAMES := {
 	"hp": "Potion HP", "mp": "Potion MP", "tp": "Town Portal Scroll", "warp": "Warp Scroll",
 	"gem": "Gem Kasar", "safety": "Safety Stone", "w50": "Warranty 50%", "w100": "Warranty 100%",
 	"aeth4": "Aetherial Jewel G4", "aeth3": "Aetherial Jewel G3", "aeth2": "Aetherial Jewel G2", "aeth1": "Aetherial Jewel G1",
-	"capsule": "Double EXP Capsule (30 mnt)",
-}
+		"capsule": "Double EXP Capsule (30 mnt)",
+	}
+
+const DAILY_QUESTS := [
+		{"id": "daily_hunt", "name": "Patroli Velamina", "desc": "Kalahkan monster apa pun", "target": 30, "key": "kills", "reward": "Laima + EXP"},
+		{"id": "daily_dungeon", "name": "Penjelajah Dungeon", "desc": "Kalahkan monster di dungeon", "target": 12, "key": "dungeon_kills", "reward": "Karu + Safety Stone"},
+		{"id": "daily_elite", "name": "Pemburu Elite", "desc": "Kalahkan Elite atau Boss", "target": 2, "key": "elite_kills", "reward": "Laima + Aetherial Jewel"},
+	]
+
+const ACHIEVEMENTS := [
+		{"id": "first_blood", "name": "First Blood", "desc": "Kalahkan monster pertama", "target": 1, "stat": "kills", "reward": "Laima + Karu"},
+		{"id": "monster_hunter", "name": "Monster Hunter", "desc": "Kalahkan 100 monster", "target": 100, "stat": "kills", "reward": "Laima + Safety Stone"},
+		{"id": "thousand_souls", "name": "Thousand Souls", "desc": "Kalahkan 1.000 monster", "target": 1000, "stat": "kills", "reward": "Laima + Karu"},
+		{"id": "dungeon_runner", "name": "Dungeon Runner", "desc": "Kalahkan 100 monster dungeon", "target": 100, "stat": "dungeon_kills", "reward": "Karu + Aetherial Jewel"},
+		{"id": "boss_breaker", "name": "Boss Breaker", "desc": "Kalahkan 10 Elite atau Boss", "target": 10, "stat": "elite_kills", "reward": "Safety Stone + Warranty 100%"},
+		{"id": "world_tour", "name": "World Tour", "desc": "Buka semua 11 map", "target": 11, "stat": "maps", "reward": "Laima besar + Karu"},
+		{"id": "level_master", "name": "Level Master", "desc": "Mencapai level 400", "target": 400, "stat": "level", "reward": "Laima besar + Aetherial Jewel"},
+		{"id": "arsenal", "name": "Arsenal Tier 400", "desc": "Miliki equipment tier 400", "target": 1, "stat": "tier400", "reward": "Karu + Safety Stone"},
+	]
 
 # Katalog NPC sengaja tetap. Level karakter hanya menentukan akses map, bukan isi toko.
 const NPC_EQUIPMENT_TIERS := [1, 10, 50, 100, 200, 320, 400]

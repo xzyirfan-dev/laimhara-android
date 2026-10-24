@@ -1609,11 +1609,22 @@ func _menu_karu() -> Array:
 
 func _menu_quest() -> Array:
 	var r: Array = []
-	r.append({"t": "Quest harian: bunuh 25 monster", "s": "%d / 25" % mini(G.quest_kills, 25), "ic": UiKit.icon("g_quest"), "bar": float(mini(G.quest_kills, 25)) / 25.0})
-	r.append({"t": "Ambil hadiah", "s": "Laima besar + 2 Koin Karu + Safety Stone", "ic": "safety", "d": G.quest_kills < 25, "f": func():
-		G.quest_kills -= 25
-		G.laima += int(Scaling.laima_kill(G.lv) * 50.0)
-		G.karu += 2
-		G.add_stack("safety", 1)
-		refresh()})
+	r.append({"label": "QUEST HARIAN  •  Reset otomatis setiap hari", "ic": UiKit.icon("g_quest")})
+	for q in Data.DAILY_QUESTS:
+		var qid: String = q.id
+		var progress: int = mini(G.daily_value(String(q.key)), int(q.target))
+		var claimed: bool = bool(G.daily_claimed.get(qid, false))
+		r.append({"t": q.name, "s": "%s  •  Hadiah: %s" % [q.desc, q.reward], "rt": "%d / %d" % [progress, int(q.target)], "bar": float(progress) / float(q.target), "ic": UiKit.icon("g_quest")})
+		r.append({"t": "Klaim Quest: " + q.name, "s": "Sudah diklaim" if claimed else "Selesaikan target untuk mengambil hadiah", "ic": "safety", "d": claimed or progress < int(q.target), "f": func():
+			G.claim_daily(qid)
+			refresh()})
+	r.append({"label": "ACHIEVEMENT  •  Progres permanen karakter"})
+	for a in Data.ACHIEVEMENTS:
+		var aid: String = a.id
+		var ap: int = mini(G.achievement_value(String(a.stat)), int(a.target))
+		var done: bool = bool(G.achievement_claimed.get(aid, false))
+		r.append({"t": a.name, "s": "%s  •  Hadiah: %s" % [a.desc, a.reward], "rt": "SELESAI" if done else "%d / %d" % [ap, int(a.target)], "bar": float(ap) / float(a.target), "ic": UiKit.icon("g_quest")})
+		r.append({"t": "Klaim Achievement: " + a.name, "s": "Hadiah sudah diambil" if done else "Target tercapai — klaim sekarang" if ap >= int(a.target) else "Teruskan petualanganmu", "ic": "safety", "d": done or ap < int(a.target), "f": func():
+			G.claim_achievement(aid)
+			refresh()})
 	return r

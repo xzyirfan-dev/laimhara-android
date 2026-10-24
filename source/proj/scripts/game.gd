@@ -36,6 +36,13 @@ var skills: Dictionary = {}
 var visited: Array = [0, 1]
 var map_id := 0
 var quest_kills := 0
+var daily_date := ""
+var daily_progress: Dictionary = {}
+var daily_claimed: Dictionary = {}
+var achievement_claimed: Dictionary = {}
+var total_kills := 0
+var dungeon_kills := 0
+var elite_kills := 0
 var capsule_t := 0.0
 var shield_t := 0.0
 var shield_frac := 0.0
@@ -56,6 +63,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if get_tree().paused:
 		return
+	_daily_reset_if_needed()
 	capsule_t = maxf(0.0, capsule_t - delta)
 	shield_t = maxf(0.0, shield_t - delta)
 	_save_t += delta
@@ -107,6 +115,13 @@ func new_game(pname: String = "Arken", hair: int = 0, exp_rate: int = 1000) -> v
 	stacks = {"hp": 10, "mp": 5, "tp": 3, "warp": 5, "g_ruby1": 1, "g_emerald1": 1}
 	sold = []
 	quest_kills = 0
+	daily_date = Time.get_date_string_from_system()
+	daily_progress = {"kills": 0, "dungeon_kills": 0, "elite_kills": 0}
+	daily_claimed = {}
+	achievement_claimed = {}
+	total_kills = 0
+	dungeon_kills = 0
+	elite_kills = 0
 	visited = [0, 1]
 	map_id = 0
 	_init_skills()
@@ -124,7 +139,9 @@ func save_game() -> void:
 	last_save = Time.get_time_string_from_system()
 	var d := {"name": player_name, "hair": hair_idx, "ts": Time.get_datetime_string_from_system(false, true), "lv": lv, "xp": xp, "hp": hp, "mp": mp, "laima": laima, "karu": karu, "eq": equipped,
 		"bag": bag, "stacks": stacks, "skills": skills, "visited": visited, "map_id": map_id, "quest": quest_kills,
-		"settings": settings, "capsule": capsule_t, "uid": _uid}
+		"settings": settings, "capsule": capsule_t, "uid": _uid, "daily_date": daily_date, "daily_progress": daily_progress,
+		"daily_claimed": daily_claimed, "achievement_claimed": achievement_claimed, "total_kills": total_kills,
+		"dungeon_kills": dungeon_kills, "elite_kills": elite_kills}
 	var f := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if f:
 		f.store_string(var_to_str(d))
@@ -163,16 +180,105 @@ func load_game() -> bool:
 	visited = d.get("visited", [0, 1])
 	map_id = int(d.get("map_id", 0))
 	quest_kills = int(d.get("quest", 0))
+	daily_date = str(d.get("daily_date", Time.get_date_string_from_system()))
+	daily_progress = d.get("daily_progress", {"kills": 0, "dungeon_kills": 0, "elite_kills": 0})
+	daily_claimed = d.get("daily_claimed", {})
+	achievement_claimed = d.get("achievement_claimed", {})
+	total_kills = int(d.get("total_kills", quest_kills))
+	dungeon_kills = int(d.get("dungeon_kills", 0))
+	elite_kills = int(d.get("elite_kills", 0))
 	capsule_t = float(d.get("capsule", 0.0))
 	_uid = int(d.get("uid", 1))
 	var st: Dictionary = d.get("settings", {})
 	for k in st.keys():
 		settings[k] = st[k]
+	_daily_reset_if_needed()
 	_init_skills()
 	if equipped_list().is_empty() and bag.is_empty():
 		return false
 	hp = clampf(hp, 1.0, float(max_hp()))
 	return true
+
+func _daily_reset_if_needed() -> void:
+	var today := Time.get_date_string_from_system()
+	if daily_date == "":
+		daily_date = today
+	if daily_date != today:
+		daily_date = today
+		daily_progress = {"kills": 0, "dungeon_kills": 0, "elite_kills": 0}
+		daily_claimed = {}
+		toast.emit("Quest harian telah diperbarui!", true)
+
+func daily_value(key: String) -> int:
+	_daily_reset_if_needed()
+	return int(daily_progress.get(key, 0))
+
+func achievement_value(stat: String) -> int:
+	match stat:
+		"kills": return total_kills
+		"dungeon_kills": return dungeon_kills
+		"elite_kills": return elite_kills
+		"maps": return visited.size()
+		"level": return lv
+		"tier400":
+			for it in equipped_list() + bag:
+				if int(it.get("tier", 0)) >= 400:
+					return 1
+	return 0
+
+func claim_daily(id: String) -> bool:
+	_daily_reset_if_needed()
+	for q in Data.DAILY_QUESTS:
+		if String(q.id) != id or bool(daily_claimed.get(id, false)):
+			continue
+		if daily_value(String(q.key)) < int(q.target):
+			return false
+		daily_claimed[id] = true
+		match id:
+			"daily_hunt":
+				laima += int(Scaling.laima_kill(lv) * 40.0)
+				gain_xp(Scaling.exp_need(lv) / 2)
+			"daily_dungeon":
+				karu += 3
+				add_stack("safety", 1)
+			"daily_elite":
+				laima += int(Scaling.laima_kill(lv) * 80.0)
+				add_stack("aeth1", 1)
+		toast.emit("Quest selesai: %s" % q.name, true)
+		return true
+	return false
+
+func claim_achievement(id: String) -> bool:
+	if bool(achievement_claimed.get(id, false)):
+		return false
+	for a in Data.ACHIEVEMENTS:
+		if String(a.id) != id:
+			continue
+		if achievement_value(String(a.stat)) < int(a.target):
+			return false
+		achievement_claimed[id] = true
+		match id:
+			"first_blood", "monster_hunter", "thousand_souls":
+				laima += int(Scaling.laima_kill(lv) * 100.0)
+				karu += 2
+			"dungeon_runner":
+				karu += 5
+				add_stack("aeth1", 1)
+			"boss_breaker":
+				add_stack("safety", 1)
+				add_stack("w100", 1)
+			"world_tour":
+				laima += int(Scaling.laima_kill(lv) * 250.0)
+				karu += 10
+			"level_master":
+				laima += int(Scaling.laima_kill(lv) * 500.0)
+				add_stack("aeth1", 2)
+			"arsenal":
+				karu += 5
+				add_stack("safety", 1)
+		toast.emit("Achievement terbuka: %s" % a.name, true)
+		return true
+	return false
 
 # ---------- items ----------
 func make_item(slot: String, tier: int, set_t: int = 0, rar: int = -1) -> Dictionary:
@@ -587,6 +693,15 @@ func on_kill(m) -> void:
 	var lg := int(Scaling.laima_kill(m.lv) * [1.0, 2.0, 10.0][m.kind])
 	laima += lg
 	quest_kills += 1
+	total_kills += 1
+	_daily_reset_if_needed()
+	daily_progress["kills"] = daily_value("kills") + 1
+	if _monster_is_dungeon(m):
+		dungeon_kills += 1
+		daily_progress["dungeon_kills"] = daily_value("dungeon_kills") + 1
+	if int(m.kind) >= 1:
+		elite_kills += 1
+		daily_progress["elite_kills"] = daily_value("elite_kills") + 1
 	loot.emit("Erfahrung : %s,  Laima : %s" % [Scaling.fmt(xpv), Scaling.fmt(lg)])
 	for line in roll_drops(m):
 		loot.emit(line)
