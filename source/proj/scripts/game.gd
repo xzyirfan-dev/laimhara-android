@@ -59,7 +59,6 @@ var _save_t := 0.0
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	_ensure_daily_state()
 
 func _process(delta: float) -> void:
 	if get_tree().paused:
@@ -117,7 +116,7 @@ func new_game(pname: String = "Arken", hair: int = 0, exp_rate: int = 1000) -> v
 	sold = []
 	quest_kills = 0
 	daily_date = Time.get_date_string_from_system()
-	daily_progress = _new_daily_progress()
+	daily_progress = {"kills": 0, "dungeon_kills": 0, "elite_kills": 0}
 	daily_claimed = {}
 	achievement_claimed = {}
 	total_kills = 0
@@ -182,7 +181,7 @@ func load_game() -> bool:
 	map_id = int(d.get("map_id", 0))
 	quest_kills = int(d.get("quest", 0))
 	daily_date = str(d.get("daily_date", Time.get_date_string_from_system()))
-	daily_progress = d.get("daily_progress", _new_daily_progress())
+	daily_progress = d.get("daily_progress", {"kills": 0, "dungeon_kills": 0, "elite_kills": 0})
 	daily_claimed = d.get("daily_claimed", {})
 	achievement_claimed = d.get("achievement_claimed", {})
 	total_kills = int(d.get("total_kills", quest_kills))
@@ -194,7 +193,6 @@ func load_game() -> bool:
 	for k in st.keys():
 		settings[k] = st[k]
 	_daily_reset_if_needed()
-	_ensure_daily_state()
 	_init_skills()
 	if equipped_list().is_empty() and bag.is_empty():
 		return false
@@ -207,30 +205,12 @@ func _daily_reset_if_needed() -> void:
 		daily_date = today
 	if daily_date != today:
 		daily_date = today
-		daily_progress = _new_daily_progress()
+		daily_progress = {"kills": 0, "dungeon_kills": 0, "elite_kills": 0}
 		daily_claimed = {}
 		toast.emit("Quest harian telah diperbarui!", true)
-		if in_game:
-			save_game()
-	_ensure_daily_state()
-
-func _new_daily_progress() -> Dictionary:
-	return {"kills": 0, "dungeon_kills": 0, "elite_kills": 0}
-
-func _ensure_daily_state() -> void:
-	if daily_date == "":
-		daily_date = Time.get_date_string_from_system()
-	if daily_progress == null:
-		daily_progress = _new_daily_progress()
-	for key in ["kills", "dungeon_kills", "elite_kills"]:
-		if not daily_progress.has(key):
-			daily_progress[key] = 0
-	if daily_claimed == null:
-		daily_claimed = {}
 
 func daily_value(key: String) -> int:
 	_daily_reset_if_needed()
-	_ensure_daily_state()
 	return int(daily_progress.get(key, 0))
 
 func achievement_value(stat: String) -> int:
@@ -248,6 +228,8 @@ func achievement_value(stat: String) -> int:
 
 func claim_daily(id: String) -> bool:
 	_daily_reset_if_needed()
+	if id == "daily_hunt":
+		return false
 	for q in Data.DAILY_QUESTS:
 		if String(q.id) != id or bool(daily_claimed.get(id, false)):
 			continue
@@ -264,12 +246,7 @@ func claim_daily(id: String) -> bool:
 			"daily_elite":
 				laima += int(Scaling.laima_kill(lv) * 80.0)
 				add_stack("aeth1", 1)
-			"daily_bounty":
-				laima += int(Scaling.laima_kill(lv) * 250.0)
-				gain_xp(Scaling.exp_need(lv))
-				add_stack("capsule", 1)
 		toast.emit("Quest selesai: %s" % q.name, true)
-		save_game()
 		return true
 	return false
 
@@ -317,10 +294,7 @@ func make_item(slot: String, tier: int, set_t: int = 0, rar: int = -1) -> Dictio
 	var soc: Array = []
 	for i in n:
 		soc.append("")
-	var opts: Array = []
-	for i in ItemDb.option_count(r):
-		opts.append(ItemDb.roll_option(slot, r))
-	return {"uid": _uid, "slot": slot, "tier": tier, "plus": 0, "roll": 1.0, "setn": set_t, "opts": opts, "fails": 0, "rar": r, "soc": soc}
+	return {"uid": _uid, "slot": slot, "tier": tier, "plus": 0, "roll": 1.0, "setn": set_t, "opts": [], "fails": 0, "rar": r, "soc": soc}
 
 func _fix_item(it: Dictionary) -> void:
 	if not it.has("rar"):
@@ -379,8 +353,7 @@ func item_score(it: Dictionary) -> float:
 	return s * (1.0 + tot / 100.0) + 0.001
 
 func item_name(it: Dictionary) -> String:
-	var rar: int = clampi(int(it.get("rar", 0)), 0, ItemDb.RARITY_NAME.size() - 1)
-	var s: String = "[%s] %s T%d" % [ItemDb.RARITY_NAME[rar], ItemDb.base_name(it.slot, int(it.tier)), int(it.tier)]
+	var s: String = "%s T%d" % [ItemDb.base_name(it.slot, int(it.tier)), int(it.tier)]
 	if it.plus > 0:
 		s += " +%d" % it.plus
 	if it.setn > 0:
@@ -725,6 +698,7 @@ func on_kill(m) -> void:
 	total_kills += 1
 	_daily_reset_if_needed()
 	daily_progress["kills"] = daily_value("kills") + 1
+	_process_repeat_hunt()
 	if _monster_is_dungeon(m):
 		dungeon_kills += 1
 		daily_progress["dungeon_kills"] = daily_value("dungeon_kills") + 1
@@ -734,6 +708,19 @@ func on_kill(m) -> void:
 	loot.emit("Erfahrung : %s,  Laima : %s" % [Scaling.fmt(xpv), Scaling.fmt(lg)])
 	for line in roll_drops(m):
 		loot.emit(line)
+
+func _process_repeat_hunt() -> void:
+	const TARGET := 20
+	var completed := false
+	while daily_value("kills") >= TARGET:
+		daily_progress["kills"] = int(daily_progress["kills"]) - TARGET
+		completed = true
+		laima += int(Scaling.laima_kill(lv) * 40.0)
+		gain_xp(Scaling.exp_need(lv) / 2)
+		add_stack("capsule", 1)
+		toast.emit("Patroli selesai! 20 monster dikalahkan — hadiah otomatis diterima.", true)
+	if completed:
+		save_game()
 
 func roll_drops(m) -> Array:
 	var out: Array = []

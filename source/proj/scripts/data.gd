@@ -67,11 +67,10 @@ const STACK_NAMES := {
 	}
 
 const DAILY_QUESTS := [
-	{"id": "daily_hunt", "name": "Patroli Velamina", "desc": "Kalahkan monster apa pun", "target": 30, "key": "kills", "reward": "Laima + EXP"},
-	{"id": "daily_dungeon", "name": "Penjelajah Dungeon", "desc": "Kalahkan monster di dungeon", "target": 12, "key": "dungeon_kills", "reward": "Karu + Safety Stone"},
-	{"id": "daily_elite", "name": "Pemburu Elite", "desc": "Kalahkan Elite atau Boss", "target": 2, "key": "elite_kills", "reward": "Laima + Aetherial Jewel"},
-	{"id": "daily_bounty", "name": "Bonus Monster Harian", "desc": "Kalahkan 100 monster untuk bonus besar", "target": 100, "key": "kills", "reward": "Laima besar + EXP besar + Capsule"},
-]
+	{"id": "daily_hunt", "name": "Patroli Velamina", "desc": "Kalahkan 20 monster — hadiah otomatis dan berulang tanpa batas", "target": 20, "key": "kills", "reward": "Laima + EXP otomatis"},
+		{"id": "daily_dungeon", "name": "Penjelajah Dungeon", "desc": "Kalahkan monster di dungeon", "target": 12, "key": "dungeon_kills", "reward": "Karu + Safety Stone"},
+		{"id": "daily_elite", "name": "Pemburu Elite", "desc": "Kalahkan Elite atau Boss", "target": 2, "key": "elite_kills", "reward": "Laima + Aetherial Jewel"},
+	]
 
 const ACHIEVEMENTS := [
 		{"id": "first_blood", "name": "First Blood", "desc": "Kalahkan monster pertama", "target": 1, "stat": "kills", "reward": "Laima + Karu"},
