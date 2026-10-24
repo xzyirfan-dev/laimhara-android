@@ -292,7 +292,10 @@ func make_item(slot: String, tier: int, set_t: int = 0, rar: int = -1) -> Dictio
 	var soc: Array = []
 	for i in n:
 		soc.append("")
-	return {"uid": _uid, "slot": slot, "tier": tier, "plus": 0, "roll": 1.0, "setn": set_t, "opts": [], "fails": 0, "rar": r, "soc": soc}
+	var opts: Array = []
+	for i in ItemDb.option_count(r):
+		opts.append(ItemDb.roll_option(slot, r))
+	return {"uid": _uid, "slot": slot, "tier": tier, "plus": 0, "roll": 1.0, "setn": set_t, "opts": opts, "fails": 0, "rar": r, "soc": soc}
 
 func _fix_item(it: Dictionary) -> void:
 	if not it.has("rar"):
@@ -351,7 +354,8 @@ func item_score(it: Dictionary) -> float:
 	return s * (1.0 + tot / 100.0) + 0.001
 
 func item_name(it: Dictionary) -> String:
-	var s: String = "%s T%d" % [ItemDb.base_name(it.slot, int(it.tier)), int(it.tier)]
+	var rar: int = clampi(int(it.get("rar", 0)), 0, ItemDb.RARITY_NAME.size() - 1)
+	var s: String = "[%s] %s T%d" % [ItemDb.RARITY_NAME[rar], ItemDb.base_name(it.slot, int(it.tier)), int(it.tier)]
 	if it.plus > 0:
 		s += " +%d" % it.plus
 	if it.setn > 0:

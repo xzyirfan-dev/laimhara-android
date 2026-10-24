@@ -33,6 +33,8 @@ var sock_msg := ""
 var doll_hero: Hero
 var _upg_t := 0.0
 var upg_flag := false
+var row_page := 0
+var grid_page := 0
 const R_JOY := 90.0
 const GOLD := Color(0.95, 0.82, 0.45)
 const LEFT_SLOTS := ["helm", "armor", "gloves", "belt", "boots"]
@@ -478,6 +480,8 @@ func _on_interact() -> void:
 # ---------- menu engine ----------
 func push_menu(title: String, builder: Callable) -> void:
 	menu_stack.append({"t": title, "b": builder})
+	row_page = 0
+	grid_page = 0
 	_show_menu()
 
 func refresh() -> void:
@@ -584,23 +588,45 @@ func show_popup(body: Control, buttons: Array, width: float = 540.0) -> void:
 
 # ---------- baris generik ----------
 func _rows_view(rows: Array) -> Control:
-	var sc := ScrollContainer.new()
-	sc.name = "KeepScroll"
-	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	var outer := VBoxContainer.new()
+	outer.add_theme_constant_override("separation", 8)
 	var m := MarginContainer.new()
 	m.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	m.add_theme_constant_override("margin_left", 6)
 	m.add_theme_constant_override("margin_right", 10)
 	m.add_theme_constant_override("margin_top", 4)
 	m.add_theme_constant_override("margin_bottom", 8)
-	sc.add_child(m)
 	var vb := VBoxContainer.new()
 	vb.add_theme_constant_override("separation", 8)
 	vb.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	m.add_child(vb)
-	for r in rows:
+	var page_size := 5
+	var pages: int = maxi(1, int(ceil(float(rows.size()) / float(page_size))))
+	row_page = clampi(row_page, 0, pages - 1)
+	var first: int = row_page * page_size
+	var last: int = mini(rows.size(), first + page_size)
+	for i in range(first, last):
+		var r: Dictionary = rows[i]
 		vb.add_child(_row_node(r))
-	return sc
+	outer.add_child(m)
+	var nav := HBoxContainer.new()
+	nav.alignment = BoxContainer.ALIGNMENT_CENTER
+	nav.add_theme_constant_override("separation", 12)
+	var prev := UiKit.btn("‹ Sebelumnya", "normal", Vector2(210, 52), 20)
+	prev.disabled = row_page <= 0
+	prev.pressed.connect(func():
+		row_page -= 1
+		refresh())
+	nav.add_child(prev)
+	nav.add_child(UiKit.lbl("Halaman %d / %d" % [row_page + 1, pages], 19, UiKit.TXT_DIM, HORIZONTAL_ALIGNMENT_CENTER))
+	var next := UiKit.btn("Berikutnya ›", "normal", Vector2(210, 52), 20)
+	next.disabled = row_page >= pages - 1
+	next.pressed.connect(func():
+		row_page += 1
+		refresh())
+	nav.add_child(next)
+	outer.add_child(nav)
+	return outer
 
 func _icon_of(v) -> Texture2D:
 	if v is Texture2D:
@@ -678,22 +704,54 @@ func _row_node(r: Dictionary) -> Control:
 
 # ---------- grid item generik ----------
 func _grid(cells: Array, cols: int = 5, cell: float = 84.0, min_cells: int = 0) -> Control:
-	var sc := ScrollContainer.new()
-	sc.name = "KeepScroll"
-	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	var n: int = cells.size()
+	var total := maxi(min_cells, int(ceil(float(n) / float(cols))) * cols)
+	total = int(ceil(float(total) / float(cols))) * cols
+	var outer := VBoxContainer.new()
+	outer.add_theme_constant_override("separation", 8)
 	var gc := GridContainer.new()
 	gc.columns = cols
 	gc.add_theme_constant_override("h_separation", 6)
 	gc.add_theme_constant_override("v_separation", 6)
-	sc.add_child(gc)
-	for c in cells:
-		gc.add_child(c)
-	var n: int = cells.size()
-	var total := maxi(min_cells, int(ceil(float(n) / float(cols))) * cols)
-	total = int(ceil(float(total) / float(cols))) * cols
-	for i in range(n, total):
-		gc.add_child(ItemSlot.new(cell))
-	return sc
+	gc.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	outer.add_child(gc)
+	var page_size: int = cols * 3
+	var pages: int = maxi(1, int(ceil(float(total) / float(page_size))))
+	grid_page = clampi(grid_page, 0, pages - 1)
+	var render: Callable
+	render = func():
+		for child in gc.get_children():
+			gc.remove_child(child)
+			child.queue_free()
+		var first: int = grid_page * page_size
+		var last: int = mini(total, first + page_size)
+		for i in range(first, last):
+			if i < n:
+				gc.add_child(cells[i])
+			else:
+				gc.add_child(ItemSlot.new(cell))
+		var fill: int = last - first
+		for j in range(fill, page_size):
+			gc.add_child(ItemSlot.new(cell))
+	render.call()
+	var nav := HBoxContainer.new()
+	nav.alignment = BoxContainer.ALIGNMENT_CENTER
+	nav.add_theme_constant_override("separation", 12)
+	var prev := UiKit.btn("‹ Sebelumnya", "normal", Vector2(210, 52), 20)
+	prev.disabled = grid_page <= 0
+	prev.pressed.connect(func():
+		grid_page -= 1
+		refresh())
+	nav.add_child(prev)
+	nav.add_child(UiKit.lbl("Halaman %d / %d" % [grid_page + 1, pages], 19, UiKit.TXT_DIM, HORIZONTAL_ALIGNMENT_CENTER))
+	var next := UiKit.btn("Berikutnya ›", "normal", Vector2(210, 52), 20)
+	next.disabled = grid_page >= pages - 1
+	next.pressed.connect(func():
+		grid_page += 1
+		refresh())
+	nav.add_child(next)
+	outer.add_child(nav)
+	return outer
 
 func _slot_for_item(it: Dictionary, cell: float = 84.0) -> ItemSlot:
 	var sl := ItemSlot.new(cell)
@@ -1424,13 +1482,16 @@ func _menu_class_shop() -> Control:
 	var cells: Array = []
 	for t in Data.NPC_EQUIPMENT_TIERS:
 		for slot in ItemDb.SLOTS:
-			var tt: int = t
-			var sl: String = slot
-			var it := G.make_item(sl, tt, 0, 0)
-			var cell := _slot_for_item(it, 96.0)
-			cell.tag = Scaling.fmt(Scaling.price(tt))
-			cell.tapped.connect(func(_s): _popup_buy(it))
-			cells.append(cell)
+			for rar in range(ItemDb.RARITY_NAME.size()):
+				var tt: int = t
+				var sl: String = slot
+				var rr: int = rar
+				var it := G.make_item(sl, tt, 0, rr)
+				var cell := _slot_for_item(it, 96.0)
+				var price: int = int(float(Scaling.price(tt)) * ItemDb.RARITY_MULT[rr])
+				cell.tag = "%s\n%s" % [ItemDb.RARITY_NAME[rr], Scaling.fmt(price)]
+				cell.tapped.connect(func(_s): _popup_buy(it))
+				cells.append(cell)
 	var grid := _grid(cells, 9, 96.0, 27)
 	grid.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	vb.add_child(grid)
@@ -1441,7 +1502,7 @@ func _menu_class_shop() -> Control:
 	return m
 
 func _popup_buy(it: Dictionary) -> void:
-	var price := Scaling.price(int(it.tier))
+	var price: int = int(float(Scaling.price(int(it.tier))) * ItemDb.RARITY_MULT[clampi(int(it.get("rar", 0)), 0, 4)])
 	var cur: Dictionary = G.equipped.get(String(it.slot), {})
 	var body := ItemCard.build_item(it, cur)
 	show_popup(body, [{"t": "Beli %s" % Scaling.fmt(price), "kind": "gold", "d": G.laima < price or G.bag.size() >= G.BAG_MAX, "f": func(): _buy_equip(it, price)}])
