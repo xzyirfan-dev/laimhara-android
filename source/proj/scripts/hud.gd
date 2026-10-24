@@ -1670,7 +1670,7 @@ func _menu_karu() -> Array:
 
 func _menu_quest() -> Array:
 	var r: Array = []
-	r.append({"label": "QUEST HARIAN  •  Reset otomatis setiap hari", "ic": UiKit.icon("g_quest")})
+	r.append({"label": "QUEST HARIAN  •  SEMUA AKTIF OTOMATIS  •  Reset: %s" % G.daily_date, "ic": UiKit.icon("g_quest")})
 	for q in Data.DAILY_QUESTS:
 		var qid: String = q.id
 		var progress: int = mini(G.daily_value(String(q.key)), int(q.target))

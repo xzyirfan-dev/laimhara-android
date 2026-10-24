@@ -59,6 +59,7 @@ var _save_t := 0.0
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	_ensure_daily_state()
 
 func _process(delta: float) -> void:
 	if get_tree().paused:
@@ -116,7 +117,7 @@ func new_game(pname: String = "Arken", hair: int = 0, exp_rate: int = 1000) -> v
 	sold = []
 	quest_kills = 0
 	daily_date = Time.get_date_string_from_system()
-	daily_progress = {"kills": 0, "dungeon_kills": 0, "elite_kills": 0}
+	daily_progress = _new_daily_progress()
 	daily_claimed = {}
 	achievement_claimed = {}
 	total_kills = 0
@@ -181,7 +182,7 @@ func load_game() -> bool:
 	map_id = int(d.get("map_id", 0))
 	quest_kills = int(d.get("quest", 0))
 	daily_date = str(d.get("daily_date", Time.get_date_string_from_system()))
-	daily_progress = d.get("daily_progress", {"kills": 0, "dungeon_kills": 0, "elite_kills": 0})
+	daily_progress = d.get("daily_progress", _new_daily_progress())
 	daily_claimed = d.get("daily_claimed", {})
 	achievement_claimed = d.get("achievement_claimed", {})
 	total_kills = int(d.get("total_kills", quest_kills))
@@ -193,6 +194,7 @@ func load_game() -> bool:
 	for k in st.keys():
 		settings[k] = st[k]
 	_daily_reset_if_needed()
+	_ensure_daily_state()
 	_init_skills()
 	if equipped_list().is_empty() and bag.is_empty():
 		return false
@@ -205,12 +207,30 @@ func _daily_reset_if_needed() -> void:
 		daily_date = today
 	if daily_date != today:
 		daily_date = today
-		daily_progress = {"kills": 0, "dungeon_kills": 0, "elite_kills": 0}
+		daily_progress = _new_daily_progress()
 		daily_claimed = {}
 		toast.emit("Quest harian telah diperbarui!", true)
+		if in_game:
+			save_game()
+	_ensure_daily_state()
+
+func _new_daily_progress() -> Dictionary:
+	return {"kills": 0, "dungeon_kills": 0, "elite_kills": 0}
+
+func _ensure_daily_state() -> void:
+	if daily_date == "":
+		daily_date = Time.get_date_string_from_system()
+	if daily_progress == null:
+		daily_progress = _new_daily_progress()
+	for key in ["kills", "dungeon_kills", "elite_kills"]:
+		if not daily_progress.has(key):
+			daily_progress[key] = 0
+	if daily_claimed == null:
+		daily_claimed = {}
 
 func daily_value(key: String) -> int:
 	_daily_reset_if_needed()
+	_ensure_daily_state()
 	return int(daily_progress.get(key, 0))
 
 func achievement_value(stat: String) -> int:
@@ -244,7 +264,12 @@ func claim_daily(id: String) -> bool:
 			"daily_elite":
 				laima += int(Scaling.laima_kill(lv) * 80.0)
 				add_stack("aeth1", 1)
+			"daily_bounty":
+				laima += int(Scaling.laima_kill(lv) * 250.0)
+				gain_xp(Scaling.exp_need(lv))
+				add_stack("capsule", 1)
 		toast.emit("Quest selesai: %s" % q.name, true)
+		save_game()
 		return true
 	return false
 
