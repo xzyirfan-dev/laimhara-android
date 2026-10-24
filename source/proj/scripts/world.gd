@@ -60,7 +60,6 @@ func _ready() -> void:
 	torch.light_energy = 0.0
 	torch.position = Vector3(0, 2.6, 0)
 	player.add_child(torch)
-	G.leveled.connect(sync_all)
 	G.leveled.connect(fx_levelup)
 	load_map(G.map_id)
 
@@ -70,7 +69,7 @@ func _mat(c: Color, emissive: bool = false) -> StandardMaterial3D:
 func in_peace(p: Vector3) -> bool:
 	return peace_r > 0.0 and Vector3(p.x, 0, p.z).distance_to(peace_c) < peace_r
 
-func load_map(id: int) -> void:
+func load_map(id: int, dungeon_mode: bool = false) -> void:
 	if map_root != null:
 		map_root.queue_free()
 	monsters.clear()
@@ -81,7 +80,7 @@ func load_map(id: int) -> void:
 	G.map_id = id
 	if not G.visited.has(id):
 		G.visited.append(id)
-	map = Data.MAPS[id]
+	map = Data.dungeon_for(id) if dungeon_mode else Data.MAPS[id].duplicate(true)
 	var th: Dictionary = THEME[id]
 	var sky: Color = map.sky
 	var dark: bool = id == 4 or id == 7 or id == 10
@@ -120,10 +119,13 @@ func load_map(id: int) -> void:
 		_build_wild(id, half)
 		_build_camp()
 		_npc("Pedagang Camp", "camp", Vector3(5, 0, -3), Color(0.9, 0.7, 0.3))
-		_npc("Warp Stone", "gate", Vector3(-5, 0, -3), Color(0.4, 0.8, 1.0))
+		if map.get("dungeon", false):
+			_npc("Pintu Keluar Dungeon", "dungeon_exit", Vector3(-5, 0, -3), Color(1.0, 0.35, 0.5))
+		else:
+			_npc("Warp Stone", "gate", Vector3(-5, 0, -3), Color(0.4, 0.8, 1.0))
+			_npc("Gerbang Dungeon", "dungeon", Vector3(0, 0, -7), Color(0.8, 0.25, 0.9))
 		_build_spawns(half)
-		var avg := Scaling.mons_level(G.lv, map.min, map.max)
-		G.toast.emit("Level Sync! %s - monster Lv %d" % [map.name, avg], true)
+		G.toast.emit("Zona tetap %s - monster Lv %d–%d" % [map.name, int(map.min), int(map.max)], true)
 	if map.town:
 		G.toast.emit("Kota Velamina - zona aman", false)
 	G.save_game()
@@ -616,20 +618,38 @@ func _npc(title: String, kind: String, pos: Vector3, col: Color) -> void:
 	map_root.add_child(n)
 
 func _build_spawns(half: float) -> void:
-	var rng := RandomNumberGenerator.new()
-	rng.randomize()
-	for i in 14:
-		var a := rng.randf() * TAU
-		var r := rng.randf_range(20.0, half - 6.0)
-		spawns.append({"pos": Vector3(cos(a) * r, 0, sin(a) * r), "mon": null, "t": rng.randf_range(0.0, 3.0), "boss": false})
-	spawns.append({"pos": Vector3(0, 0, -half + 10.0), "mon": null, "t": 1.0, "boss": true})
+	# Setiap jenis monster mendapat spot tetap. Empat ring level menjaga
+	# progresi map tetap terasa tanpa menyesuaikan level monster ke pemain.
+	var mob_count: int = map.mobs.size()
+	if mob_count <= 0:
+		return
+	var rings := 6 if map.get("dungeon", false) else 4
+	var span: int = maxi(0, int(map.max) - int(map.min))
+	for ring_idx in rings:
+		var fixed_level := int(map.min) if span == 0 else int(round(float(map.min) + float(span) * float(ring_idx) / float(rings - 1)))
+		for type_idx in mob_count:
+			var slot := ring_idx * mob_count + type_idx
+			var a := (TAU * float(slot) / float(rings * mob_count)) + _rng.randf_range(-0.08, 0.08)
+			var r := 22.0 + float(ring_idx) * ((half - 30.0) / float(rings - 1)) + _rng.randf_range(-2.0, 2.0)
+			var elite: bool = bool(map.get("dungeon", false)) or (ring_idx == rings - 1 and type_idx == mob_count - 1)
+			spawns.append({
+				"pos": Vector3(cos(a) * r, 0, sin(a) * r),
+				"mon": null,
+				"t": _rng.randf_range(0.0, 3.0),
+				"boss": false,
+				"kind": 1 if elite else 0,
+				"monster": str(map.mobs[type_idx]),
+				"level": fixed_level,
+				"spot": "ring_%d_type_%d" % [ring_idx + 1, type_idx + 1]
+			})
+	spawns.append({"pos": Vector3(0, 0, -half + 10.0), "mon": null, "t": 1.0, "boss": true, "kind": 2, "monster": str(map.boss), "level": int(map.max), "spot": "boss_gate"})
 
 func _spawn(sp: Dictionary) -> void:
 	var m := Monster.new()
-	var k := 2 if sp.boss else (1 if randf() < 0.1 else 0)
-	var nm: String = map.boss if sp.boss else str(map.mobs.pick_random())
+	var k: int = int(sp.get("kind", 2 if sp.boss else 0))
+	var nm: String = str(sp.get("monster", map.boss if sp.boss else map.mobs[0]))
 	m.world = self
-	m.setup(self, sp, map, k, nm, randi_range(-2, 2))
+	m.setup(self, sp, map, k, nm, 0)
 	map_root.add_child(m)
 	monsters.append(m)
 	sp.mon = m
@@ -646,6 +666,17 @@ func sync_all() -> void:
 
 func warp(id: int) -> void:
 	load_map(id)
+
+func enter_dungeon(id: int) -> void:
+	if id <= 0 or id >= Data.MAPS.size():
+		return
+	load_map(id, true)
+	G.toast.emit("Dungeon dimasuki: %s — kalahkan monster dan boss!" % map.name, true)
+
+func exit_dungeon() -> void:
+	if not map.get("dungeon", false):
+		return
+	load_map(int(map.get("base_id", 0)))
 
 func player_died() -> void:
 	await get_tree().create_timer(1.5).timeout
