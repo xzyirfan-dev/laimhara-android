@@ -139,11 +139,86 @@ func _build_ground(half: float, th: Dictionary) -> void:
 	else:
 		tex = Gfx.tex_noise(th.base, 0.035, th.spk, 0.1, "noise%d" % int(map.id))
 	var g := MeshInstance3D.new()
-	var pm := PlaneMesh.new()
-	pm.size = Vector2(size, size)
-	g.mesh = pm
+	var st := SurfaceTool.new()
+	st.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var steps := 38
+	var span := size * 0.5
+	var step := size / float(steps)
+	for z in range(steps):
+		for x in range(steps):
+			var x0 := -span + float(x) * step
+			var z0 := -span + float(z) * step
+			var a := Vector3(x0, _terrain_height(x0, z0, half), z0)
+			var b := Vector3(x0 + step, _terrain_height(x0 + step, z0, half), z0)
+			var c := Vector3(x0 + step, _terrain_height(x0 + step, z0 + step, half), z0 + step)
+			var d := Vector3(x0, _terrain_height(x0, z0 + step, half), z0 + step)
+			var uv_a := Vector2(float(x) / steps, float(z) / steps) * float(th.tile)
+			var uv_b := Vector2(float(x + 1) / steps, float(z) / steps) * float(th.tile)
+			var uv_c := Vector2(float(x + 1) / steps, float(z + 1) / steps) * float(th.tile)
+			var uv_d := Vector2(float(x) / steps, float(z + 1) / steps) * float(th.tile)
+			var n1 := (b - a).cross(c - a).normalized()
+			st.set_normal(n1); st.set_uv(uv_a); st.add_vertex(a)
+			st.set_normal(n1); st.set_uv(uv_b); st.add_vertex(b)
+			st.set_normal(n1); st.set_uv(uv_c); st.add_vertex(c)
+			var n2 := (c - a).cross(d - a).normalized()
+			st.set_normal(n2); st.set_uv(uv_a); st.add_vertex(a)
+			st.set_normal(n2); st.set_uv(uv_c); st.add_vertex(c)
+			st.set_normal(n2); st.set_uv(uv_d); st.add_vertex(d)
+	g.mesh = st.commit()
 	g.material_override = Gfx.ground_material(tex, size, float(th.tile))
 	map_root.add_child(g)
+	_build_river(size, half, int(map.id))
+
+func _terrain_height(x: float, z: float, half: float) -> float:
+	var id := int(map.id)
+	if map.get("town", false):
+		return sin(x * 0.035 + id) * 0.12 + cos(z * 0.04) * 0.1
+	var h := sin(x * 0.075 + float(id) * 1.7) * cos(z * 0.055) * 1.7
+	h += sin((x + z) * 0.14 + float(id)) * 0.55
+	var ridge: float = abs(sin(x * 0.035 + z * 0.021 + float(id)))
+	h += pow(ridge, 5.0) * (2.0 if id != 5 else 1.1)
+	var edge: float = clampf((maxf(abs(x), abs(z)) - half * 0.7) / (half * 0.3), 0.0, 1.0)
+	h += edge * edge * 2.8
+	var river_axis: float = x if id % 2 == 0 else z
+	var river_curve: float = sin((x if id % 2 == 0 else z) * 0.055 + float(id)) * 5.0
+	var river_dist: float = abs((z if id % 2 == 0 else x) - river_curve)
+	if river_dist < 4.5:
+		h -= (4.5 - river_dist) * 0.55
+	if id == 4 or id == 7:
+		h -= abs(sin(x * 0.12) * cos(z * 0.09)) * 0.8
+	if id == 8:
+		h += sin(x * 0.09) * 0.6
+	return h
+
+func _build_river(size: float, half: float, id: int) -> void:
+	if map.get("town", false):
+		return
+	var water := MeshInstance3D.new()
+	var pm := PlaneMesh.new()
+	pm.size = Vector2(5.0, size * 1.2)
+	water.mesh = pm
+	water.position.y = -1.35
+	if id % 2 == 0:
+		water.rotation.y = PI * 0.5
+	var col := Color(0.12, 0.5, 0.8, 0.72)
+	if id == 4 or id == 7:
+		col = Color(0.35, 0.18, 0.8, 0.75)
+	if id == 8:
+		col = Color(1.0, 0.16, 0.03, 0.85)
+	if id == 10:
+		col = Color(0.75, 0.08, 0.95, 0.78)
+	water.material_override = Gfx.mat(col, true, 0.55)
+	map_root.add_child(water)
+	var banks: Array = []
+	var count := int(size / 8.0)
+	for i in count:
+		var along := -size * 0.5 + float(i) * 8.0
+		var curve := sin(along * 0.055 + float(id)) * 5.0
+		var p1 := Vector3(along, -0.35, curve + 3.5) if id % 2 == 0 else Vector3(curve + 3.5, -0.35, along)
+		var p2 := Vector3(along, -0.35, curve - 3.5) if id % 2 == 0 else Vector3(curve - 3.5, -0.35, along)
+		banks.append(_tf(p1, Vector3(0.7, 0.7, 1.8), _rng.randf() * TAU))
+		banks.append(_tf(p2, Vector3(0.7, 0.7, 1.8), _rng.randf() * TAU))
+	_mm(_spm(1.0, 0.7, 6), Color(0.22, 0.26, 0.3), banks)
 
 # ------------------------------------------------------------------ util scatter
 func _tf(p: Vector3, s: Vector3, yaw: float = 0.0) -> Transform3D:
