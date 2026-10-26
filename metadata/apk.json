@@ -1,0 +1,13 @@
+{
+  "artifact": "apk/Laimhara_v3_baru.apk",
+  "packageName": "com.irfan.laimhara3",
+  "versionName": "3.0",
+  "versionCode": 3,
+  "minSdk": 21,
+  "targetSdk": 34,
+  "mainActivity": "com.godot.game.GodotApp",
+  "abi": ["arm64-v8a"],
+  "engineSignature": "Godot Android",
+  "sha256": "050bc6925df02a1569194a8fe51502608ceab76d5d8fae5e6742c5be5c1a35da",
+  "sourceAvailable": false
+}

@@ -1,0 +1,11 @@
+.DS_Store
+.idea/
+*.iml
+.gradle/
+build/
+local.properties
+# Signing material must remain outside the repository
+*.pem
+*.key
+*.keystore
+*.jks
