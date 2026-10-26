@@ -276,20 +276,20 @@ func _input(event: InputEvent) -> void:
 			if event.index == cam_touch:
 				cam_touch = -1
 	elif event is InputEventScreenDrag:
-			cam_points[event.index] = event.position
-			if cam_points.size() >= 2:
-				var cp: Array = cam_points.values()
-				var dist: float = Vector2(cp[0]).distance_to(Vector2(cp[1]))
-				if cam_pinch > 0.0:
-					world.camera_zoom((cam_pinch - dist) * 0.025)
-				cam_pinch = dist
-			elif event.index == cam_touch:
-				var delta_cam: Vector2 = event.position - cam_last
-				world.camera_orbit(-delta_cam.x * 0.012, -delta_cam.y * 0.008)
-				cam_last = event.position
-				if event.index == joy_idx:
-					joy_pos = event.position
-					G.joy = -((joy_pos - joy_center) / R_JOY).limit_length(1.0)
+		cam_points[event.index] = event.position
+		if cam_points.size() >= 2:
+			var cp: Array = cam_points.values()
+			var dist: float = Vector2(cp[0]).distance_to(Vector2(cp[1]))
+			if cam_pinch > 0.0:
+				world.camera_zoom((cam_pinch - dist) * 0.025)
+			cam_pinch = dist
+		elif event.index == joy_idx:
+			joy_pos = event.position
+			G.joy = ((joy_pos - joy_center) / R_JOY).limit_length(1.0)
+		elif event.index == cam_touch:
+			var delta_cam: Vector2 = event.position - cam_last
+			world.camera_orbit(-delta_cam.x * 0.012, -delta_cam.y * 0.008)
+			cam_last = event.position
 	elif event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			world.camera_zoom(-1.0)
@@ -317,6 +317,10 @@ func _pad_base(c: Vector2, r: float, tex: String, tint: Color = Color.WHITE) -> 
 	canvas.draw_texture_rect(UiKit.ui(tex), Rect2(c - Vector2(sz, sz) * 0.5, Vector2(sz, sz)), false, tint)
 
 func _icon_at(c: Vector2, sz: float, tex: Texture2D, tint: Color = Color.WHITE) -> void:
+	if tex == null:
+		canvas.draw_circle(c, sz * 0.36, Color(0.08, 0.16, 0.22, 0.95))
+		canvas.draw_arc(c, sz * 0.36, 0.0, TAU, 16, Color(0.2, 0.85, 1.0, 0.9), 3.0)
+		return
 	canvas.draw_texture_rect(tex, Rect2(c - Vector2(sz, sz) * 0.5, Vector2(sz, sz)), false, tint)
 
 func _cooldown(c: Vector2, r: float, frac: float) -> void:
