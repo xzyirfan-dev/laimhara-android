@@ -168,6 +168,8 @@ func _build_ground(half: float, th: Dictionary) -> void:
 	g.material_override = Gfx.ground_material(tex, size, float(th.tile))
 	map_root.add_child(g)
 	_build_river(size, half, int(map.id))
+	if map.get("dungeon", false):
+		_build_dungeon_ridges(size, half, int(map.id))
 
 func _terrain_height(x: float, z: float, half: float) -> float:
 	var id := int(map.id)
@@ -175,6 +177,14 @@ func _terrain_height(x: float, z: float, half: float) -> float:
 		return sin(x * 0.035 + id) * 0.12 + cos(z * 0.04) * 0.1
 	var h := sin(x * 0.075 + float(id) * 1.7) * cos(z * 0.055) * 1.7
 	h += sin((x + z) * 0.14 + float(id)) * 0.55
+	if map.get("dungeon", false):
+		var lane_axis: float = z if id % 2 == 0 else x
+		var lane_curve: float = sin(lane_axis * 0.045 + float(id)) * 7.0
+		var lane_offset: float = abs((x if id % 2 == 0 else z) - lane_curve)
+		var wall_factor: float = clampf((lane_offset - 6.0) / 5.0, 0.0, 1.0)
+		h += wall_factor * wall_factor * 4.5
+		h -= exp(-pow(lane_offset / 4.5, 2.0)) * 0.8
+		h += sin(x * 0.19 + z * 0.13) * wall_factor * 0.7
 	var ridge: float = abs(sin(x * 0.035 + z * 0.021 + float(id)))
 	h += pow(ridge, 5.0) * (2.0 if id != 5 else 1.1)
 	var edge: float = clampf((maxf(abs(x), abs(z)) - half * 0.7) / (half * 0.3), 0.0, 1.0)
@@ -189,6 +199,25 @@ func _terrain_height(x: float, z: float, half: float) -> float:
 	if id == 8:
 		h += sin(x * 0.09) * 0.6
 	return h
+
+func _build_dungeon_ridges(size: float, half: float, id: int) -> void:
+	var ridge_xf: Array = []
+	var crystal_xf: Array = []
+	var count := int(size / 7.0)
+	for i in count:
+		var along := -size * 0.5 + float(i) * 7.0
+		var curve := sin(along * 0.045 + float(id)) * 7.0
+		for side in [-1.0, 1.0]:
+			var cross: float = curve + side * 8.0
+			var p := Vector3(along, 0, cross) if id % 2 == 0 else Vector3(cross, 0, along)
+			var h: float = 2.0 + abs(sin(along * 0.17 + float(id))) * 3.5
+			ridge_xf.append(_tf(p + Vector3(0, h * 0.5, 0), Vector3(1.5, h, 1.5), _rng.randf() * TAU))
+			if id == 4 or id == 7 or id == 10:
+				crystal_xf.append(_tf(p + Vector3(0, h + 0.5, 0), Vector3(0.5, 1.2, 0.5), _rng.randf() * TAU))
+	_mm(_spm(1.0, 1.0, 7), Color(0.22, 0.2, 0.24), ridge_xf)
+	if not crystal_xf.is_empty():
+		var glow := Color(0.35, 0.6, 1.0) if id == 4 else Color(0.8, 0.25, 1.0)
+		_mm(_cone(0.8, 1.8, 6), glow, crystal_xf, true)
 
 func _build_river(size: float, half: float, id: int) -> void:
 	if map.get("town", false):
