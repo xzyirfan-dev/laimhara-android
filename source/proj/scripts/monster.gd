@@ -22,6 +22,8 @@ var color := Color.WHITE
 var map_min := 1
 var map_max := 20
 var map_sets: Array = []
+var dungeon := false
+var drop_tier := 0
 var stat_factor := 1.0
 var exp_factor := 1.0
 var label: Label3D
@@ -48,6 +50,8 @@ func setup(w, spd: Dictionary, mi: Dictionary, k: int, nm: String, off: int) -> 
 	map_min = mi.min
 	map_max = mi.max
 	map_sets = mi.sets
+	dungeon = bool(mi.get("dungeon", false))
+	drop_tier = int(mi.get("drop_tier", mi.get("max", map_max)))
 	position = spd.pos
 	home = position
 	sc = [1.0, 1.5, 2.6][k]

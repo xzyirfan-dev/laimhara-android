@@ -74,8 +74,8 @@ func _ready() -> void:
 	g.stacks["g_emerald2"] = 3
 	g.laima = 999999999
 	for m in ["_menu_pause", "_menu_skill", "_menu_settings", "_menu_scroll", "_menu_warp", "_menu_market", "_menu_buyback", "_menu_jewel", "_menu_combine", "_menu_karu", "_menu_quest"]:
-		var rows = hud.call(m)
-		print("menu ", m, " ", "control" if rows is Control else "rows=%d" % rows.size())
+		var rows: Variant = hud.call(m)
+		print("menu ", m, " rows=", rows.size() if rows is Array else "control")
 		hud.push_menu(m, Callable(hud, m))
 		await get_tree().process_frame
 		hud.close_menu()
