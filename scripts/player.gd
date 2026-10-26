@@ -183,6 +183,22 @@ func take_damage(raw: float) -> void:
 		dead = true
 		world.player_died()
 
+func _camera_relative_direction(input_vec: Vector2) -> Vector3:
+	"""Map joystick screen input to the camera's horizontal ground plane.
+
+	The joystick uses screen coordinates (right = +X, down = +Y), while the
+	player lives in world X/Z coordinates. Using the camera basis keeps the
+	controls correct after any free-orbit rotation or pitch change.
+	"""
+	var v := input_vec.limit_length(1.0)
+	if world == null or world.cam == null or v.length_squared() < 0.0001:
+		return Vector3(v.x, 0.0, v.y)
+	var cam_basis: Basis = world.cam.global_transform.basis
+	var screen_right := Vector3(cam_basis.x.x, 0.0, cam_basis.x.z).normalized()
+	var screen_forward := Vector3(-cam_basis.z.x, 0.0, -cam_basis.z.z).normalized()
+	var dir := screen_right * v.x + screen_forward * (-v.y)
+	return dir.normalized() if dir.length_squared() > 0.0001 else Vector3.ZERO
+
 func _process(delta: float) -> void:
 	if dead:
 		return
@@ -201,7 +217,7 @@ func _process(delta: float) -> void:
 	var moving := jv.length() > 0.15
 	is_moving = moving
 	if moving:
-		var dir := Vector3(jv.x, 0, jv.y)
+		var dir := _camera_relative_direction(jv)
 		position += dir * speed * delta
 		_face(position + dir)
 	elif bool(G.settings.auto_hunt) and not world.map.town:
