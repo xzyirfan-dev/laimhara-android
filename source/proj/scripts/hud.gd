@@ -287,9 +287,9 @@ func _input(event: InputEvent) -> void:
 				var delta_cam: Vector2 = event.position - cam_last
 				world.camera_orbit(-delta_cam.x * 0.012, -delta_cam.y * 0.008)
 				cam_last = event.position
-			if event.index == joy_idx:
-				joy_pos = event.position
-				G.joy = ((joy_pos - joy_center) / R_JOY).limit_length(1.0)
+				if event.index == joy_idx:
+					joy_pos = event.position
+					G.joy = -((joy_pos - joy_center) / R_JOY).limit_length(1.0)
 	elif event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			world.camera_zoom(-1.0)

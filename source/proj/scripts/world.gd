@@ -15,6 +15,8 @@ var peace_r := 0.0
 var npc_anims: Array = []
 var _fx_t := 0.0
 var _rng := RandomNumberGenerator.new()
+const MAX_ACTIVE_WILD := 18
+const MAX_ACTIVE_DUNGEON := 28
 var cam_yaw := 0.0
 var cam_pitch := 0.72
 var cam_distance := 14.0
@@ -727,7 +729,7 @@ func _build_spawns(half: float) -> void:
 	var mob_count: int = map.mobs.size()
 	if mob_count <= 0:
 		return
-	var rings := 6 if map.get("dungeon", false) else 4
+	var rings := 4 if map.get("dungeon", false) else 3
 	var span: int = maxi(0, int(map.max) - int(map.min))
 	for ring_idx in rings:
 		var fixed_level := int(map.min) if span == 0 else int(round(float(map.min) + float(span) * float(ring_idx) / float(rings - 1)))
@@ -749,6 +751,10 @@ func _build_spawns(half: float) -> void:
 	spawns.append({"pos": Vector3(0, 0, -half + 10.0), "mon": null, "t": 1.0, "boss": true, "kind": 2, "monster": str(map.boss), "level": int(map.max), "spot": "boss_gate"})
 
 func _spawn(sp: Dictionary) -> void:
+	var active_limit: int = MAX_ACTIVE_DUNGEON if map.get("dungeon", false) else MAX_ACTIVE_WILD
+	if monsters.size() >= active_limit:
+		sp.t = 2.0
+		return
 	var m := Monster.new()
 	var k: int = int(sp.get("kind", 2 if sp.boss else 0))
 	var nm: String = str(sp.get("monster", map.boss if sp.boss else map.mobs[0]))
