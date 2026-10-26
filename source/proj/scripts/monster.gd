@@ -22,9 +22,6 @@ var color := Color.WHITE
 var map_min := 1
 var map_max := 20
 var map_sets: Array = []
-var fixed_level := 1
-var dungeon := false
-var drop_tier := 1
 var stat_factor := 1.0
 var exp_factor := 1.0
 var label: Label3D
@@ -51,11 +48,6 @@ func setup(w, spd: Dictionary, mi: Dictionary, k: int, nm: String, off: int) -> 
 	map_min = mi.min
 	map_max = mi.max
 	map_sets = mi.sets
-	dungeon = bool(mi.get("dungeon", false))
-	drop_tier = int(mi.get("drop_tier", map_max))
-	# Level monster berasal dari spot map, bukan level karakter.
-	# Fallback ini menjaga kompatibilitas dengan spawn lama.
-	fixed_level = clampi(int(spd.get("level", map_min + off)), map_min, map_max)
 	position = spd.pos
 	home = position
 	sc = [1.0, 1.5, 2.6][k]
@@ -124,11 +116,13 @@ func _ready() -> void:
 	_update_label()
 
 func sync_level(first: bool = false) -> void:
-	# Monster di world tetap pada level spot-nya. Tidak ada rubber-band
-	# scaling terhadap level karakter saat pemain naik level.
-	lv = fixed_level
-	stat_factor = 1.0
-	exp_factor = 1.0
+	var base := Scaling.mons_level(G.lv, map_min, map_max)
+	var l := clampi(base + lv_off, map_min, map_max)
+	if kind == 2:
+		l = clampi(base + 3, map_min, 400)
+	lv = l
+	stat_factor = 0.85 if G.lv < map_min else 1.0
+	exp_factor = 0.3 if G.lv > map_max else 1.0
 	var ratio := 1.0 if first else hp / max_hp
 	max_hp = Scaling.mons_hp(lv, kind) * stat_factor
 	hp = max_hp * ratio
@@ -197,6 +191,9 @@ func _process(delta: float) -> void:
 		ring.rotation.y += delta * 1.4
 	var pp: Vector3 = world.player.position
 	var d := position.distance_to(pp)
+	if label != null and kind == 0:
+		var nearest: Monster = world.player.nearest(14.0)
+		label.visible = (nearest == self and d <= 14.0)
 	slow_t -= delta
 	atk_t -= delta
 	var spd := speed * (0.5 if slow_t > 0.0 else 1.0)
