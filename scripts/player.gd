@@ -13,6 +13,7 @@ var hero: Hero
 var tag: Label3D
 var is_moving := false
 var _look := ""
+var _mount_state := false
 
 func _ready() -> void:
 	hero = Hero.new()
@@ -204,6 +205,9 @@ func _process(delta: float) -> void:
 		return
 	if _look != _look_key():
 		_rebuild()
+	if _mount_state != bool(G.mount_active):
+		_mount_state = bool(G.mount_active)
+		_rebuild()
 	atk_cd -= delta
 	hit_t += delta
 	pot_cd -= delta
@@ -235,6 +239,7 @@ func _process(delta: float) -> void:
 	hero.animate(delta, is_moving, G.shield_t > 0.0)
 	position.x = clampf(position.x, -half, half)
 	position.z = clampf(position.z, -half, half)
+	position.y = world.terrain_height_at(position.x, position.z)
 	if bool(G.settings.auto_attack) or bool(G.settings.auto_hunt):
 		try_attack()
 		if bool(G.settings.auto_hunt):

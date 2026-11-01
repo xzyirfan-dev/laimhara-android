@@ -53,6 +53,7 @@ func setup(w, spd: Dictionary, mi: Dictionary, k: int, nm: String, off: int) -> 
 	dungeon = bool(mi.get("dungeon", false))
 	drop_tier = int(mi.get("drop_tier", mi.get("max", map_max)))
 	position = spd.pos
+	position.y = world.terrain_height_at(position.x, position.z)
 	home = position
 	sc = [1.0, 1.5, 2.6][k]
 	sync_level(true)
@@ -82,14 +83,23 @@ void fragment() {
 static var _bar_sh: Shader
 
 func _ready() -> void:
-	var built := Models.monster(mname, color, kind)
-	model = built.root
-	anim = built.anim
-	mh = float(built.h)
 	body = Node3D.new()
 	body.scale = Vector3(sc, sc, sc)
 	add_child(body)
-	body.add_child(model)
+	var verified_path := AssetCatalog.monster_path(int(sp.get("source_id", 0)))
+	if verified_path.is_empty() and mname == "Monster1025":
+		verified_path = AssetCatalog.monster_path(1025)
+	var verified := Models.attach_glb(body, verified_path, 0.15, Vector3.ZERO)
+	if verified != null:
+		model = verified
+		anim = []
+		mh = 1.8
+	else:
+		var built := Models.monster(mname, color, kind)
+		model = built.root
+		anim = built.anim
+		mh = float(built.h)
+		body.add_child(model)
 	# cincin kaki: elite oranye, boss merah (seperti cincin aura di screenshot Laghaim)
 	if kind > 0:
 		ring = Gfx.pivot(self, Vector3(0, 0.05, 0))
@@ -179,6 +189,7 @@ func _move_to(t: Vector3, s: float, delta: float) -> void:
 	dir = dir.normalized()
 	moving = true
 	position += dir * s * delta
+	position.y = world.terrain_height_at(position.x, position.z)
 	rotation.y = lerp_angle(rotation.y, atan2(dir.x, dir.z), 8.0 * delta)
 
 func _process(delta: float) -> void:

@@ -23,6 +23,8 @@ var _gun_z := 0.64
 var _orbit: Node3D
 var _halo: MeshInstance3D
 var _shell: MeshInstance3D
+var mount_model: Node3D
+var asset_helm: Node3D
 var _wfx := 0
 var _afx := 0
 var hair_col: Color = Color(0.8, 0.86, 0.98)
@@ -433,18 +435,34 @@ func build_eq(eq: Dictionary) -> void:
 		_shell.material_override = glass(acol, 0.12 + 0.03 * float(_afx - 3), 1.2)
 		_shell.position = Vector3(0, 1.15, 0)
 		add_child(_shell)
-	if _afx >= 4 or setc >= 4:
-		_orbit = Gfx.pivot(self, Vector3(0, 1.2, 0))
-		for i in 4:
-			var a2 := TAU * float(i) / 4.0
-			var ob := Gfx.sph(_orbit, 0.07, Vector3(cos(a2) * 0.75, sin(a2 * 2.0) * 0.4, sin(a2) * 0.75), acol, true)
-			ob.material_override = glass(acol, 0.9, 2.2)
-		_sparks(self, Vector3(0, 0.1, 0), Color(1.0, 0.6, 0.25) if setc < 4 else Color(1.0, 0.85, 0.3), 36, 1.6, 1.6, 0.08, 0.45, 1.8)
+		if _afx >= 4 or setc >= 4:
+			_orbit = Gfx.pivot(self, Vector3(0, 1.2, 0))
+			for i in 4:
+				var a2 := TAU * float(i) / 4.0
+				var ob := Gfx.sph(_orbit, 0.07, Vector3(cos(a2) * 0.75, sin(a2 * 2.0) * 0.4, sin(a2) * 0.75), acol, true)
+				ob.material_override = glass(acol, 0.9, 2.2)
+			_sparks(self, Vector3(0, 0.1, 0), Color(1.0, 0.6, 0.25) if setc < 4 else Color(1.0, 0.85, 0.3), 36, 1.6, 1.6, 0.08, 0.45, 1.8)
+	# Aset mount nyata dari paket data: hanya dipasang bila status mount aktif.
+	# Scale 0.04 berasal dari bounds GLB Warehouse_Pet_003 (sekitar 44 x 45 unit).
+	mount_model = null
+	asset_helm = null
+	var helm_item: Dictionary = eq.get("helm", {})
+	var helm_asset := AssetCatalog.find_item(int(helm_item.get("asset_id", 0)))
+	var helm_path := AssetCatalog.model_path(helm_asset)
+	if not helm_path.is_empty():
+		# Bounds AM_Item0006: x≈0..2.4, y≈-0.9..0.9; center dan scale adalah explicit.
+		asset_helm = Models.attach_glb(self, helm_path, 0.48, Vector3(-0.58, 1.78, 0.0))
+	if bool(G.mount_active):
+		mount_model = Models.attach_glb(self, AssetCatalog.pet_path(3), 0.04, Vector3(0, 0.24, 0.9))
+		if mount_model != null:
+			mount_model.rotation.y = PI
 
 func animate(delta: float, moving: bool, shield: bool) -> void:
 	if rig == null:
 		return
 	_t += delta
+	if mount_model != null and is_instance_valid(mount_model):
+		mount_model.position.y = 0.24 + sin(_t * 3.0) * 0.025
 	var k := minf(1.0, 12.0 * delta)
 	if moving:
 		_phase += delta * 10.5

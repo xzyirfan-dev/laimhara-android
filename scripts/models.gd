@@ -3,6 +3,21 @@ extends RefCounted
 ## Model 3D prosedural: tiap spesies monster punya siluet sendiri (bukan bola polos), NPC berpakaian sesuai peran.
 ## Anim: array {n: Node3D, ax: 0=rot x, 2=rot z, 3=pos x, 4=pos y, amp, sp, ph, always}
 
+static func attach_glb(parent: Node3D, path: String, scale: float, pos: Vector3 = Vector3.ZERO) -> Node3D:
+	if path.is_empty() or not FileAccess.file_exists(path):
+		return null
+	var packed := load(path) as PackedScene
+	if packed == null:
+		return null
+	var instance := packed.instantiate() as Node3D
+	if instance == null:
+		return null
+	instance.name = "VerifiedGLB_" + path.get_file().get_basename()
+	instance.position = pos
+	instance.scale = Vector3.ONE * scale
+	parent.add_child(instance)
+	return instance
+
 const BONE := Color(0.88, 0.85, 0.74)
 
 static func _eye(p: Node3D, pos: Vector3, r: float, c: Color) -> void:

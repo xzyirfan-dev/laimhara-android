@@ -328,7 +328,8 @@ func make_item(slot: String, tier: int, set_t: int = 0, rar: int = -1) -> Dictio
 	var soc: Array = []
 	for i in n:
 		soc.append("")
-	return {"uid": _uid, "slot": slot, "tier": tier, "plus": 0, "roll": 1.0, "setn": set_t, "opts": [], "fails": 0, "rar": r, "soc": soc}
+	var catalog_item := AssetCatalog.pick_item(slot, tier)
+	return {"uid": _uid, "slot": slot, "tier": tier, "plus": 0, "roll": 1.0, "setn": set_t, "opts": [], "fails": 0, "rar": r, "soc": soc, "asset_id": int(catalog_item.get("id", 0))}
 
 func _fix_item(it: Dictionary) -> void:
 	if not it.has("rar"):

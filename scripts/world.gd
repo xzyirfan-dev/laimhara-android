@@ -108,7 +108,8 @@ func load_map(id: int, dungeon_mode: bool = false) -> void:
 		torch.light_energy = 0.0
 	var half := 45.0 if map.town else 60.0
 	player.half = half - 2.0
-	player.position = Vector3(0, 0, 4 if map.town else 0)
+	var spawn_z := 4.0 if map.town else 0.0
+	player.position = Vector3(0, terrain_height_at(0.0, spawn_z), spawn_z)
 	player.dead = false
 	_rng.seed = int(id) * 977 + 13
 	_build_ground(half, th)
@@ -201,6 +202,11 @@ func _terrain_height(x: float, z: float, half: float) -> float:
 	if id == 8:
 		h += sin(x * 0.09) * 0.6
 	return h
+
+func terrain_height_at(x: float, z: float) -> float:
+	"""Return the exact visual ground height used by the procedural mesh."""
+	var half := 45.0 if map.get("town", false) else 60.0
+	return _terrain_height(x, z, half)
 
 func _build_dungeon_ridges(size: float, half: float, id: int) -> void:
 	var ridge_xf: Array = []
@@ -687,7 +693,7 @@ func _gold_tree(p: Vector3) -> void:
 
 func _npc(title: String, kind: String, pos: Vector3, col: Color) -> void:
 	var n := Node3D.new()
-	n.position = pos
+	n.position = Vector3(pos.x, terrain_height_at(pos.x, pos.z), pos.z)
 	n.add_to_group("npc")
 	n.set_meta("title", title)
 	n.set_meta("kind", kind)

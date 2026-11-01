@@ -1,0 +1,5895 @@
+{
+  "source": "original converted GLB vs export/slim GLB",
+  "units": "Same coordinate units as GLB; no unit conversion applied.",
+  "basis": "GLTF node local transform. Missing node TRS means specification defaults: translation [0,0,0], rotation quaternion [0,0,0,1] (Euler [0,0,0] degrees), scale [1,1,1].",
+  "warning": "These are node transforms only, not verified attachment offsets relative to BODY. Vertices are retained in each GLB local coordinate frame. The original CSY converter script/rig attachment metadata was not located, so actual assembly positions relative to body remain unknown.",
+  "comparison": {
+    "parts": 150,
+    "rootTransformMismatches": 0,
+    "vertexArrayMismatches": 0,
+    "positionsLostBySlimConversion": false
+  },
+  "parts": [
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "ARMS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_ARMS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_ARMS.CSY",
+      "slim_glb": "../slim/characters/A_M_ARMS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 126,
+      "mesh_bounds_min": [
+        -0.16722361743450165,
+        -0.660792887210846,
+        -0.449651300907135
+      ],
+      "mesh_bounds_max": [
+        2.302866220474243,
+        0.6606735587120056,
+        0.5550099611282349
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "BODY",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_BODY.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_BODY.CSY",
+      "slim_glb": "../slim/characters/A_M_BODY.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 82,
+      "mesh_bounds_min": [
+        -0.11983082443475723,
+        -1.0997915267944336,
+        -0.935558557510376
+      ],
+      "mesh_bounds_max": [
+        1.849012851715088,
+        1.0983710289001465,
+        1.2381397485733032
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "FACE",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_FACE.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_FACE.CSY",
+      "slim_glb": "../slim/characters/A_M_FACE.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 72,
+      "mesh_bounds_min": [
+        -0.11982987076044083,
+        -0.7956061363220215,
+        -0.7765582203865051
+      ],
+      "mesh_bounds_max": [
+        2.771644115447998,
+        0.7939135432243347,
+        1.3421460390090942
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "FEET",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_FEET.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_FEET.CSY",
+      "slim_glb": "../slim/characters/A_M_FEET.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 60,
+      "mesh_bounds_min": [
+        -0.0673748329281807,
+        -0.6044317483901978,
+        -0.6948990821838379
+      ],
+      "mesh_bounds_max": [
+        3.838979959487915,
+        0.6058597564697266,
+        2.0018324851989746
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "LEGS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_LEGS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_LEGS.CSY",
+      "slim_glb": "../slim/characters/A_M_LEGS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 68,
+      "mesh_bounds_min": [
+        -1.657733678817749,
+        -1.5001484155654907,
+        -1.2206615209579468
+      ],
+      "mesh_bounds_max": [
+        3.1659278869628906,
+        1.4987255334854126,
+        1.098623275756836
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "1",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_HAIR1.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_HAIR1.CSY",
+      "slim_glb": "../slim/characters/A_M_HAIR1.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 63,
+      "mesh_bounds_min": [
+        -0.08180087804794312,
+        -1.1827616691589355,
+        -1.4196845293045044
+      ],
+      "mesh_bounds_max": [
+        2.40986704826355,
+        1.267238736152649,
+        1.5113098621368408
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "2",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_HAIR2.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_HAIR2.CSY",
+      "slim_glb": "../slim/characters/A_M_HAIR2.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 63,
+      "mesh_bounds_min": [
+        -0.28803569078445435,
+        -0.9639333486557007,
+        -1.3655304908752441
+      ],
+      "mesh_bounds_max": [
+        2.5277328491210938,
+        0.9566454291343689,
+        1.317147970199585
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "3",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_HAIR3.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_HAIR3.CSY",
+      "slim_glb": "../slim/characters/A_M_HAIR3.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 54,
+      "mesh_bounds_min": [
+        -0.19812646508216858,
+        -0.9093741774559021,
+        -1.1567344665527344
+      ],
+      "mesh_bounds_max": [
+        2.4487130641937256,
+        0.8688948750495911,
+        1.2610177993774414
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "4",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_HAIR4.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_HAIR4.CSY",
+      "slim_glb": "../slim/characters/A_M_HAIR4.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 168,
+      "mesh_bounds_min": [
+        -0.4275585412979126,
+        -1.012756586074829,
+        -1.8888497352600098
+      ],
+      "mesh_bounds_max": [
+        2.221750259399414,
+        0.9646615982055664,
+        1.1657135486602783
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "5",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_HAIR5.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_HAIR5.CSY",
+      "slim_glb": "../slim/characters/A_M_HAIR5.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 134,
+      "mesh_bounds_min": [
+        -0.6454270482063293,
+        -1.2806918621063232,
+        -1.4777806997299194
+      ],
+      "mesh_bounds_max": [
+        2.1815521717071533,
+        1.281423568725586,
+        1.1097471714019775
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "11",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_HAIR11.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_HAIR11.CSY",
+      "slim_glb": "../slim/characters/A_M_HAIR11.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 63,
+      "mesh_bounds_min": [
+        -0.08180087804794312,
+        -1.1827616691589355,
+        -1.419684648513794
+      ],
+      "mesh_bounds_max": [
+        2.40986704826355,
+        1.267238736152649,
+        1.5113098621368408
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "12",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_HAIR12.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_HAIR12.CSY",
+      "slim_glb": "../slim/characters/A_M_HAIR12.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 63,
+      "mesh_bounds_min": [
+        -0.28803569078445435,
+        -0.9639333486557007,
+        -1.3655306100845337
+      ],
+      "mesh_bounds_max": [
+        2.5277328491210938,
+        0.9566454291343689,
+        1.3171477317810059
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "13",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_HAIR13.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_HAIR13.CSY",
+      "slim_glb": "../slim/characters/A_M_HAIR13.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 54,
+      "mesh_bounds_min": [
+        -0.19812646508216858,
+        -0.9093741774559021,
+        -1.1567347049713135
+      ],
+      "mesh_bounds_max": [
+        2.4487130641937256,
+        0.8688948750495911,
+        1.2610177993774414
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "14",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_HAIR14.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_HAIR14.CSY",
+      "slim_glb": "../slim/characters/A_M_HAIR14.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 168,
+      "mesh_bounds_min": [
+        -0.4275585412979126,
+        -1.012756586074829,
+        -1.8888497352600098
+      ],
+      "mesh_bounds_max": [
+        2.221750259399414,
+        0.9646615982055664,
+        1.1657135486602783
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "15",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_M_HAIR15.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_M_HAIR15.CSY",
+      "slim_glb": "../slim/characters/A_M_HAIR15.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 134,
+      "mesh_bounds_min": [
+        -0.6454270482063293,
+        -1.2806918621063232,
+        -1.4777806997299194
+      ],
+      "mesh_bounds_max": [
+        2.1815521717071533,
+        1.281423568725586,
+        1.1097471714019775
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "ARMS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_ARMS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_ARMS.CSY",
+      "slim_glb": "../slim/characters/A_W_ARMS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 136,
+      "mesh_bounds_min": [
+        -0.045863162726163864,
+        -0.4304453432559967,
+        -0.28883615136146545
+      ],
+      "mesh_bounds_max": [
+        2.4567677974700928,
+        0.43030866980552673,
+        0.5116604566574097
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "BODY",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_BODY.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_BODY.CSY",
+      "slim_glb": "../slim/characters/A_W_BODY.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 81,
+      "mesh_bounds_min": [
+        0.08060155063867569,
+        -1.2271111011505127,
+        -0.8062129020690918
+      ],
+      "mesh_bounds_max": [
+        2.0408575534820557,
+        1.2255479097366333,
+        1.4362878799438477
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "FACE",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_FACE.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_FACE.CSY",
+      "slim_glb": "../slim/characters/A_W_FACE.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -0.12770463526248932,
+        -0.7432543039321899,
+        -0.8049057126045227
+      ],
+      "mesh_bounds_max": [
+        2.487888813018799,
+        0.7410247921943665,
+        1.3488746881484985
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "FEET",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_FEET.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_FEET.CSY",
+      "slim_glb": "../slim/characters/A_W_FEET.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -0.15604987740516663,
+        -0.6603256464004517,
+        -0.7271435856819153
+      ],
+      "mesh_bounds_max": [
+        4.162816524505615,
+        0.6618834137916565,
+        1.8272954225540161
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "LEGS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_LEGS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_LEGS.CSY",
+      "slim_glb": "../slim/characters/A_W_LEGS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 81,
+      "mesh_bounds_min": [
+        -1.0341143608093262,
+        -1.3606512546539307,
+        -0.9104335308074951
+      ],
+      "mesh_bounds_max": [
+        3.0364880561828613,
+        1.359086513519287,
+        1.0928256511688232
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "1",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_HAIR1.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_HAIR1.CSY",
+      "slim_glb": "../slim/characters/A_W_HAIR1.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 57,
+      "mesh_bounds_min": [
+        -3.637787103652954,
+        -0.8194789886474609,
+        -2.6667399406433105
+      ],
+      "mesh_bounds_max": [
+        2.388256788253784,
+        0.8287738561630249,
+        1.0657552480697632
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "2",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_HAIR2.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_HAIR2.CSY",
+      "slim_glb": "../slim/characters/A_W_HAIR2.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 82,
+      "mesh_bounds_min": [
+        -2.3617300987243652,
+        -0.8160348534584045,
+        -1.831052541732788
+      ],
+      "mesh_bounds_max": [
+        2.1965928077697754,
+        0.8358567357063293,
+        1.0825024843215942
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "3",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_HAIR3.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_HAIR3.CSY",
+      "slim_glb": "../slim/characters/A_W_HAIR3.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -0.12731850147247314,
+        -0.9310214519500732,
+        -1.3201053142547607
+      ],
+      "mesh_bounds_max": [
+        2.3722639083862305,
+        0.9545170068740845,
+        1.393345832824707
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "4",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_HAIR4.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_HAIR4.CSY",
+      "slim_glb": "../slim/characters/A_W_HAIR4.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 108,
+      "mesh_bounds_min": [
+        -0.0918695479631424,
+        -1.5603139400482178,
+        -1.4485033750534058
+      ],
+      "mesh_bounds_max": [
+        2.293684482574463,
+        1.5059318542480469,
+        1.0743364095687866
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "5",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_HAIR5.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_HAIR5.CSY",
+      "slim_glb": "../slim/characters/A_W_HAIR5.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -0.17038875818252563,
+        -0.9965670704841614,
+        -1.220143437385559
+      ],
+      "mesh_bounds_max": [
+        2.309431552886963,
+        0.9980747103691101,
+        1.0104315280914307
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "11",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_HAIR11.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_HAIR11.CSY",
+      "slim_glb": "../slim/characters/A_W_HAIR11.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -0.12731850147247314,
+        -0.9310214519500732,
+        -1.3201053142547607
+      ],
+      "mesh_bounds_max": [
+        2.3722639083862305,
+        0.9545170068740845,
+        1.3933457136154175
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "12",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_HAIR12.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_HAIR12.CSY",
+      "slim_glb": "../slim/characters/A_W_HAIR12.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 82,
+      "mesh_bounds_min": [
+        -2.3617300987243652,
+        -0.8160348534584045,
+        -1.831052541732788
+      ],
+      "mesh_bounds_max": [
+        2.1965928077697754,
+        0.8358567357063293,
+        1.0825024843215942
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "13",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_HAIR13.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_HAIR13.CSY",
+      "slim_glb": "../slim/characters/A_W_HAIR13.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 57,
+      "mesh_bounds_min": [
+        0.05578416958451271,
+        -0.819499671459198,
+        -2.672550678253174
+      ],
+      "mesh_bounds_max": [
+        2.388256788253784,
+        0.828794538974762,
+        1.0657813549041748
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "14",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_HAIR14.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_HAIR14.CSY",
+      "slim_glb": "../slim/characters/A_W_HAIR14.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 108,
+      "mesh_bounds_min": [
+        -0.0918695479631424,
+        -1.5603139400482178,
+        -1.4485033750534058
+      ],
+      "mesh_bounds_max": [
+        2.293684482574463,
+        1.5059318542480469,
+        1.0743364095687866
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "A",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "15",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/A_W_HAIR15.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/A_W_HAIR15.CSY",
+      "slim_glb": "../slim/characters/A_W_HAIR15.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -0.17038938403129578,
+        -0.9965670704841614,
+        -1.2201433181762695
+      ],
+      "mesh_bounds_max": [
+        2.309431552886963,
+        0.9980747103691101,
+        1.0104312896728516
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "ARMS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_ARMS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_ARMS.CSY",
+      "slim_glb": "../slim/characters/B_M_ARMS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 168,
+      "mesh_bounds_min": [
+        0.006852880120277405,
+        -1.1128994226455688,
+        -1.2044808864593506
+      ],
+      "mesh_bounds_max": [
+        4.0100297927856445,
+        1.112913966178894,
+        1.3457283973693848
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "BODY",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_BODY.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_BODY.CSY",
+      "slim_glb": "../slim/characters/B_M_BODY.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 81,
+      "mesh_bounds_min": [
+        -0.12869688868522644,
+        -1.7143518924713135,
+        -1.6352885961532593
+      ],
+      "mesh_bounds_max": [
+        2.76340389251709,
+        1.7143559455871582,
+        1.9823698997497559
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "FACE",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_FACE.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_FACE.CSY",
+      "slim_glb": "../slim/characters/B_M_FACE.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 40,
+      "mesh_bounds_min": [
+        -0.3889661133289337,
+        -0.9140353202819824,
+        0.3584098815917969
+      ],
+      "mesh_bounds_max": [
+        2.730745315551758,
+        0.9140450358390808,
+        2.0950188636779785
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "FEET",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_FEET.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_FEET.CSY",
+      "slim_glb": "../slim/characters/B_M_FEET.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 54,
+      "mesh_bounds_min": [
+        -0.09582863748073578,
+        -1.0808616876602173,
+        -1.3814030885696411
+      ],
+      "mesh_bounds_max": [
+        4.816821098327637,
+        1.0808582305908203,
+        2.6379799842834473
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "LEGS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_LEGS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_LEGS.CSY",
+      "slim_glb": "../slim/characters/B_M_LEGS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 62,
+      "mesh_bounds_min": [
+        -1.5438199043273926,
+        -2.013794422149658,
+        -1.665617823600769
+      ],
+      "mesh_bounds_max": [
+        4.6703410148620605,
+        2.0137932300567627,
+        1.4194557666778564
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "1",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_HAIR1.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_HAIR1.CSY",
+      "slim_glb": "../slim/characters/B_M_HAIR1.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 53,
+      "mesh_bounds_min": [
+        -0.06530099362134933,
+        -1.0817348957061768,
+        -1.8666396141052246
+      ],
+      "mesh_bounds_max": [
+        3.475491523742676,
+        1.0808466672897339,
+        1.8690698146820068
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "2",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_HAIR2.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_HAIR2.CSY",
+      "slim_glb": "../slim/characters/B_M_HAIR2.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 45,
+      "mesh_bounds_min": [
+        0.052821218967437744,
+        -0.9539931416511536,
+        -1.688287377357483
+      ],
+      "mesh_bounds_max": [
+        3.8346827030181885,
+        0.9539275765419006,
+        1.6636813879013062
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "3",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_HAIR3.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_HAIR3.CSY",
+      "slim_glb": "../slim/characters/B_M_HAIR3.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 37,
+      "mesh_bounds_min": [
+        -0.11937422305345535,
+        -1.1792138814926147,
+        -1.8942893743515015
+      ],
+      "mesh_bounds_max": [
+        3.553809404373169,
+        1.1781947612762451,
+        1.664902687072754
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "4",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_HAIR4.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_HAIR4.CSY",
+      "slim_glb": "../slim/characters/B_M_HAIR4.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 146,
+      "mesh_bounds_min": [
+        0.04186300188302994,
+        -1.3758511543273926,
+        -1.6554787158966064
+      ],
+      "mesh_bounds_max": [
+        2.9282710552215576,
+        1.299594759941101,
+        2.016101121902466
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "5",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_HAIR5.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_HAIR5.CSY",
+      "slim_glb": "../slim/characters/B_M_HAIR5.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 135,
+      "mesh_bounds_min": [
+        -0.3342808485031128,
+        -2.067558765411377,
+        -1.8562592267990112
+      ],
+      "mesh_bounds_max": [
+        2.988722324371338,
+        2.0562169551849365,
+        2.0450599193573
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "11",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_HAIR11.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_HAIR11.CSY",
+      "slim_glb": "../slim/characters/B_M_HAIR11.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 53,
+      "mesh_bounds_min": [
+        -0.06530290096998215,
+        -1.0817620754241943,
+        -1.8666869401931763
+      ],
+      "mesh_bounds_max": [
+        3.4754934310913086,
+        1.0808733701705933,
+        1.8691171407699585
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "12",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_HAIR12.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_HAIR12.CSY",
+      "slim_glb": "../slim/characters/B_M_HAIR12.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 45,
+      "mesh_bounds_min": [
+        0.052821218967437744,
+        -0.9539931416511536,
+        -1.688287377357483
+      ],
+      "mesh_bounds_max": [
+        3.8346827030181885,
+        0.9539275765419006,
+        1.6636813879013062
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "13",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_HAIR13.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_HAIR13.CSY",
+      "slim_glb": "../slim/characters/B_M_HAIR13.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 37,
+      "mesh_bounds_min": [
+        -0.11937803775072098,
+        -1.1792436838150024,
+        -1.894336462020874
+      ],
+      "mesh_bounds_max": [
+        3.553807497024536,
+        1.1782243251800537,
+        1.6649442911148071
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "14",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_HAIR14.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_HAIR14.CSY",
+      "slim_glb": "../slim/characters/B_M_HAIR14.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 146,
+      "mesh_bounds_min": [
+        0.04186300188302994,
+        -1.3758511543273926,
+        -1.6554787158966064
+      ],
+      "mesh_bounds_max": [
+        2.9282710552215576,
+        1.299594759941101,
+        2.016101121902466
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "15",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_M_HAIR15.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_M_HAIR15.CSY",
+      "slim_glb": "../slim/characters/B_M_HAIR15.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 135,
+      "mesh_bounds_min": [
+        -0.3342808485031128,
+        -2.067558765411377,
+        -1.8562592267990112
+      ],
+      "mesh_bounds_max": [
+        2.988722324371338,
+        2.0562169551849365,
+        2.0450599193573
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "ARMS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_ARMS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_ARMS.CSY",
+      "slim_glb": "../slim/characters/B_W_ARMS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 172,
+      "mesh_bounds_min": [
+        -0.0777864158153534,
+        -0.6348706483840942,
+        -0.4703991115093231
+      ],
+      "mesh_bounds_max": [
+        2.4813499450683594,
+        0.6334460377693176,
+        0.5996454358100891
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "BODY",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_BODY.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_BODY.CSY",
+      "slim_glb": "../slim/characters/B_W_BODY.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 72,
+      "mesh_bounds_min": [
+        0.0185680128633976,
+        -1.2389382123947144,
+        -0.8426640033721924
+      ],
+      "mesh_bounds_max": [
+        2.1744091510772705,
+        1.2316240072250366,
+        1.2991673946380615
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "FACE",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_FACE.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_FACE.CSY",
+      "slim_glb": "../slim/characters/B_W_FACE.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 35,
+      "mesh_bounds_min": [
+        -0.14747333526611328,
+        -0.6278921961784363,
+        0.072076216340065
+      ],
+      "mesh_bounds_max": [
+        1.756156086921692,
+        0.625856876373291,
+        1.0749081373214722
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "FEET",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_FEET.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_FEET.CSY",
+      "slim_glb": "../slim/characters/B_W_FEET.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 52,
+      "mesh_bounds_min": [
+        0.4210265278816223,
+        -0.8988988399505615,
+        -1.1048721075057983
+      ],
+      "mesh_bounds_max": [
+        4.646881580352783,
+        0.9061203002929688,
+        2.2532193660736084
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "LEGS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_LEGS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_LEGS.CSY",
+      "slim_glb": "../slim/characters/B_W_LEGS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 108,
+      "mesh_bounds_min": [
+        -1.648746132850647,
+        -1.6761839389801025,
+        -1.185552954673767
+      ],
+      "mesh_bounds_max": [
+        4.706480503082275,
+        1.6688637733459473,
+        1.1437560319900513
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "1",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_HAIR1.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_HAIR1.CSY",
+      "slim_glb": "../slim/characters/B_W_HAIR1.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 93,
+      "mesh_bounds_min": [
+        -0.4769916236400604,
+        -1.02262282371521,
+        -2.6274285316467285
+      ],
+      "mesh_bounds_max": [
+        2.5768849849700928,
+        1.0602259635925293,
+        1.2894034385681152
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "2",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_HAIR2.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_HAIR2.CSY",
+      "slim_glb": "../slim/characters/B_W_HAIR2.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 66,
+      "mesh_bounds_min": [
+        -0.30013301968574524,
+        -0.9494494199752808,
+        -1.7895461320877075
+      ],
+      "mesh_bounds_max": [
+        2.6518218517303467,
+        1.3547331094741821,
+        1.2373384237289429
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "3",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_HAIR3.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_HAIR3.CSY",
+      "slim_glb": "../slim/characters/B_W_HAIR3.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 55,
+      "mesh_bounds_min": [
+        -0.3735373020172119,
+        -0.8132320046424866,
+        -2.2602880001068115
+      ],
+      "mesh_bounds_max": [
+        2.8457558155059814,
+        0.7721745371818542,
+        1.1067347526550293
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "4",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_HAIR4.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_HAIR4.CSY",
+      "slim_glb": "../slim/characters/B_W_HAIR4.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 68,
+      "mesh_bounds_min": [
+        -0.2310989946126938,
+        -0.9395955801010132,
+        -1.2795861959457397
+      ],
+      "mesh_bounds_max": [
+        2.2492361068725586,
+        0.7538753151893616,
+        1.0383565425872803
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "5",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_HAIR5.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_HAIR5.CSY",
+      "slim_glb": "../slim/characters/B_W_HAIR5.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -0.7797326445579529,
+        -0.9965370297431946,
+        -1.519282341003418
+      ],
+      "mesh_bounds_max": [
+        2.2271273136138916,
+        0.9828495383262634,
+        1.0343432426452637
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "11",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_HAIR11.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_HAIR11.CSY",
+      "slim_glb": "../slim/characters/B_W_HAIR11.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 93,
+      "mesh_bounds_min": [
+        -0.4769916534423828,
+        -1.02262282371521,
+        -2.6274282932281494
+      ],
+      "mesh_bounds_max": [
+        2.5768849849700928,
+        1.0602259635925293,
+        1.2894034385681152
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "12",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_HAIR12.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_HAIR12.CSY",
+      "slim_glb": "../slim/characters/B_W_HAIR12.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 66,
+      "mesh_bounds_min": [
+        -0.30013301968574524,
+        -0.9494494199752808,
+        -1.7895461320877075
+      ],
+      "mesh_bounds_max": [
+        2.651822090148926,
+        1.3547331094741821,
+        1.2373383045196533
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "13",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_HAIR13.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_HAIR13.CSY",
+      "slim_glb": "../slim/characters/B_W_HAIR13.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 55,
+      "mesh_bounds_min": [
+        -0.3735373020172119,
+        -0.8132320046424866,
+        -2.2602877616882324
+      ],
+      "mesh_bounds_max": [
+        2.8457558155059814,
+        0.7721745371818542,
+        1.1067346334457397
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "14",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_HAIR14.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_HAIR14.CSY",
+      "slim_glb": "../slim/characters/B_W_HAIR14.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 68,
+      "mesh_bounds_min": [
+        -0.2310989946126938,
+        -0.9395955801010132,
+        -1.2795861959457397
+      ],
+      "mesh_bounds_max": [
+        2.2492361068725586,
+        0.7538753151893616,
+        1.0383565425872803
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "B",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "15",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/B_W_HAIR15.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/B_W_HAIR15.CSY",
+      "slim_glb": "../slim/characters/B_W_HAIR15.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -0.7797326445579529,
+        -0.9965370297431946,
+        -1.5192824602127075
+      ],
+      "mesh_bounds_max": [
+        2.2271273136138916,
+        0.9828495383262634,
+        1.0343432426452637
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "ARMS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_ARMS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_ARMS.CSY",
+      "slim_glb": "../slim/characters/F_M_ARMS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 160,
+      "mesh_bounds_min": [
+        -0.0925031378865242,
+        -1.0474269390106201,
+        -1.1297893524169922
+      ],
+      "mesh_bounds_max": [
+        2.9435315132141113,
+        1.0499236583709717,
+        1.0136830806732178
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "BODY",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_BODY.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_BODY.CSY",
+      "slim_glb": "../slim/characters/F_M_BODY.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 227,
+      "mesh_bounds_min": [
+        -0.4833467900753021,
+        -2.502424478530884,
+        -1.5428848266601562
+      ],
+      "mesh_bounds_max": [
+        3.634787082672119,
+        2.4634459018707275,
+        2.1593596935272217
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "FACE",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_FACE.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_FACE.CSY",
+      "slim_glb": "../slim/characters/F_M_FACE.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 117,
+      "mesh_bounds_min": [
+        0.16045399010181427,
+        -1.1592814922332764,
+        -0.0885692909359932
+      ],
+      "mesh_bounds_max": [
+        2.2695584297180176,
+        1.1237969398498535,
+        1.7295609712600708
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "FEET",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_FEET.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_FEET.CSY",
+      "slim_glb": "../slim/characters/F_M_FEET.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 110,
+      "mesh_bounds_min": [
+        -0.007019246928393841,
+        -1.00977623462677,
+        -2.1533775329589844
+      ],
+      "mesh_bounds_max": [
+        5.520340442657471,
+        1.0092366933822632,
+        2.2525124549865723
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "LEGS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_LEGS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_LEGS.CSY",
+      "slim_glb": "../slim/characters/F_M_LEGS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 104,
+      "mesh_bounds_min": [
+        -1.469778299331665,
+        -1.8949034214019775,
+        -1.9163655042648315
+      ],
+      "mesh_bounds_max": [
+        5.185774803161621,
+        1.7152409553527832,
+        1.5054246187210083
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "1",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_HAIR1.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_HAIR1.CSY",
+      "slim_glb": "../slim/characters/F_M_HAIR1.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 47,
+      "mesh_bounds_min": [
+        0.5500104427337646,
+        -1.0239698886871338,
+        -1.1702508926391602
+      ],
+      "mesh_bounds_max": [
+        2.746893882751465,
+        0.9696532487869263,
+        1.276687502861023
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "2",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_HAIR2.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_HAIR2.CSY",
+      "slim_glb": "../slim/characters/F_M_HAIR2.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 47,
+      "mesh_bounds_min": [
+        0.5500104427337646,
+        -1.0239698886871338,
+        -1.1702508926391602
+      ],
+      "mesh_bounds_max": [
+        2.746893882751465,
+        0.9696532487869263,
+        1.276687502861023
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "3",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_HAIR3.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_HAIR3.CSY",
+      "slim_glb": "../slim/characters/F_M_HAIR3.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 170,
+      "mesh_bounds_min": [
+        -0.4298553168773651,
+        -1.189484715461731,
+        -1.1067177057266235
+      ],
+      "mesh_bounds_max": [
+        3.317333221435547,
+        1.185153841972351,
+        1.2803715467453003
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "4",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_HAIR4.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_HAIR4.CSY",
+      "slim_glb": "../slim/characters/F_M_HAIR4.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 170,
+      "mesh_bounds_min": [
+        -0.4298553168773651,
+        -1.189484715461731,
+        -1.1067177057266235
+      ],
+      "mesh_bounds_max": [
+        3.317333221435547,
+        1.185153841972351,
+        1.2803715467453003
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "5",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_HAIR5.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_HAIR5.CSY",
+      "slim_glb": "../slim/characters/F_M_HAIR5.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 154,
+      "mesh_bounds_min": [
+        0.5133662223815918,
+        -1.1884100437164307,
+        -1.2378509044647217
+      ],
+      "mesh_bounds_max": [
+        3.3740592002868652,
+        1.1264855861663818,
+        1.3178316354751587
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "11",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_HAIR11.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_HAIR11.CSY",
+      "slim_glb": "../slim/characters/F_M_HAIR11.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 154,
+      "mesh_bounds_min": [
+        0.5133662223815918,
+        -1.1884100437164307,
+        -1.2378509044647217
+      ],
+      "mesh_bounds_max": [
+        3.3740592002868652,
+        1.1264855861663818,
+        1.3178316354751587
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "12",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_HAIR12.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_HAIR12.CSY",
+      "slim_glb": "../slim/characters/F_M_HAIR12.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 57,
+      "mesh_bounds_min": [
+        0.5240948796272278,
+        -0.990780234336853,
+        -1.091713786125183
+      ],
+      "mesh_bounds_max": [
+        2.656994581222534,
+        0.9447762966156006,
+        1.6479443311691284
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "13",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_HAIR13.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_HAIR13.CSY",
+      "slim_glb": "../slim/characters/F_M_HAIR13.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 57,
+      "mesh_bounds_min": [
+        0.5240948796272278,
+        -0.990780234336853,
+        -1.091713786125183
+      ],
+      "mesh_bounds_max": [
+        2.656994581222534,
+        0.9447762966156006,
+        1.6479443311691284
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "14",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_HAIR14.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_HAIR14.CSY",
+      "slim_glb": "../slim/characters/F_M_HAIR14.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 97,
+      "mesh_bounds_min": [
+        -0.20712673664093018,
+        -1.0667802095413208,
+        -1.8053135871887207
+      ],
+      "mesh_bounds_max": [
+        2.7437784671783447,
+        0.984411895275116,
+        1.6838778257369995
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "15",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_M_HAIR15.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_M_HAIR15.CSY",
+      "slim_glb": "../slim/characters/F_M_HAIR15.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 97,
+      "mesh_bounds_min": [
+        -0.20712673664093018,
+        -1.0667802095413208,
+        -1.8053135871887207
+      ],
+      "mesh_bounds_max": [
+        2.7437784671783447,
+        0.984411895275116,
+        1.6838778257369995
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "ARMS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_ARMS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_ARMS.CSY",
+      "slim_glb": "../slim/characters/F_W_ARMS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 118,
+      "mesh_bounds_min": [
+        0.02566376142203808,
+        -0.5770385265350342,
+        -0.608847975730896
+      ],
+      "mesh_bounds_max": [
+        2.98775577545166,
+        0.5770158171653748,
+        0.4411289393901825
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "BODY",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_BODY.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_BODY.CSY",
+      "slim_glb": "../slim/characters/F_W_BODY.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 203,
+      "mesh_bounds_min": [
+        -0.3325668275356293,
+        -1.4797744750976562,
+        -0.8687483668327332
+      ],
+      "mesh_bounds_max": [
+        2.6331682205200195,
+        1.4797735214233398,
+        1.8482365608215332
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "FACE",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_FACE.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_FACE.CSY",
+      "slim_glb": "../slim/characters/F_W_FACE.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 118,
+      "mesh_bounds_min": [
+        -0.22654946148395538,
+        -0.9103326797485352,
+        -0.45805612206459045
+      ],
+      "mesh_bounds_max": [
+        1.6873477697372437,
+        0.9022273421287537,
+        1.4439752101898193
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "FEET",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_FEET.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_FEET.CSY",
+      "slim_glb": "../slim/characters/F_W_FEET.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 128,
+      "mesh_bounds_min": [
+        0.09398745745420456,
+        -0.9246054887771606,
+        -1.1566306352615356
+      ],
+      "mesh_bounds_max": [
+        5.35383415222168,
+        0.9245960116386414,
+        1.3957172632217407
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "LEGS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_LEGS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_LEGS.CSY",
+      "slim_glb": "../slim/characters/F_W_LEGS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 121,
+      "mesh_bounds_min": [
+        -1.0477973222732544,
+        -1.6705299615859985,
+        -1.4425400495529175
+      ],
+      "mesh_bounds_max": [
+        4.899385452270508,
+        1.6705394983291626,
+        1.2478584051132202
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "1",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_HAIR1.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_HAIR1.CSY",
+      "slim_glb": "../slim/characters/F_W_HAIR1.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 81,
+      "mesh_bounds_min": [
+        -0.5475733280181885,
+        -0.8404293656349182,
+        -0.9642695784568787
+      ],
+      "mesh_bounds_max": [
+        2.1085991859436035,
+        0.7866328954696655,
+        1.4269551038742065
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "2",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_HAIR2.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_HAIR2.CSY",
+      "slim_glb": "../slim/characters/F_W_HAIR2.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 81,
+      "mesh_bounds_min": [
+        -0.5475733280181885,
+        -0.8404293656349182,
+        -0.9642695784568787
+      ],
+      "mesh_bounds_max": [
+        2.1085991859436035,
+        0.7866328954696655,
+        1.4269551038742065
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "3",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_HAIR3.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_HAIR3.CSY",
+      "slim_glb": "../slim/characters/F_W_HAIR3.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 112,
+      "mesh_bounds_min": [
+        -0.6195582151412964,
+        -1.0196952819824219,
+        -0.8189985752105713
+      ],
+      "mesh_bounds_max": [
+        2.2236011028289795,
+        1.033086895942688,
+        1.3966679573059082
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "4",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_HAIR4.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_HAIR4.CSY",
+      "slim_glb": "../slim/characters/F_W_HAIR4.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 112,
+      "mesh_bounds_min": [
+        -0.6195582151412964,
+        -1.0196952819824219,
+        -0.8189985752105713
+      ],
+      "mesh_bounds_max": [
+        2.2236011028289795,
+        1.033086895942688,
+        1.3966679573059082
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "5",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_HAIR5.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_HAIR5.CSY",
+      "slim_glb": "../slim/characters/F_W_HAIR5.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 127,
+      "mesh_bounds_min": [
+        -0.030054524540901184,
+        -0.9717096090316772,
+        -0.9891483187675476
+      ],
+      "mesh_bounds_max": [
+        2.344712972640991,
+        0.9973096251487732,
+        1.210347056388855
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "11",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_HAIR11.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_HAIR11.CSY",
+      "slim_glb": "../slim/characters/F_W_HAIR11.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 127,
+      "mesh_bounds_min": [
+        -0.030054524540901184,
+        -0.9717096090316772,
+        -0.9891483187675476
+      ],
+      "mesh_bounds_max": [
+        2.344712972640991,
+        0.9973096251487732,
+        1.210347056388855
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "12",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_HAIR12.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_HAIR12.CSY",
+      "slim_glb": "../slim/characters/F_W_HAIR12.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 232,
+      "mesh_bounds_min": [
+        -0.22995752096176147,
+        -1.1268573999404907,
+        -1.9585883617401123
+      ],
+      "mesh_bounds_max": [
+        2.1895318031311035,
+        1.1360105276107788,
+        1.3759775161743164
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "13",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_HAIR13.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_HAIR13.CSY",
+      "slim_glb": "../slim/characters/F_W_HAIR13.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 232,
+      "mesh_bounds_min": [
+        -0.22995752096176147,
+        -1.1268573999404907,
+        -1.9585883617401123
+      ],
+      "mesh_bounds_max": [
+        2.1895318031311035,
+        1.1360105276107788,
+        1.3759775161743164
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "14",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_HAIR14.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_HAIR14.CSY",
+      "slim_glb": "../slim/characters/F_W_HAIR14.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 178,
+      "mesh_bounds_min": [
+        -1.9832720756530762,
+        -1.486305832862854,
+        -1.0766092538833618
+      ],
+      "mesh_bounds_max": [
+        2.1691246032714844,
+        1.6034667491912842,
+        1.4179695844650269
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "F",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "15",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/F_W_HAIR15.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/F_W_HAIR15.CSY",
+      "slim_glb": "../slim/characters/F_W_HAIR15.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 178,
+      "mesh_bounds_min": [
+        -1.9832720756530762,
+        -1.486305832862854,
+        -1.0766092538833618
+      ],
+      "mesh_bounds_max": [
+        2.1691246032714844,
+        1.6034667491912842,
+        1.4179695844650269
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "ARMS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_ARMS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_ARMS.CSY",
+      "slim_glb": "../slim/characters/H_M_ARMS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 210,
+      "mesh_bounds_min": [
+        -0.16333049535751343,
+        -1.5766288042068481,
+        -1.256025791168213
+      ],
+      "mesh_bounds_max": [
+        3.4674882888793945,
+        1.5766679048538208,
+        1.3822221755981445
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "BODY",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_BODY.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_BODY.CSY",
+      "slim_glb": "../slim/characters/H_M_BODY.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 83,
+      "mesh_bounds_min": [
+        -0.01350119337439537,
+        -1.952605128288269,
+        -1.5483975410461426
+      ],
+      "mesh_bounds_max": [
+        3.1637561321258545,
+        1.9527477025985718,
+        2.0593583583831787
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "FACE",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_FACE.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_FACE.CSY",
+      "slim_glb": "../slim/characters/H_M_FACE.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 31,
+      "mesh_bounds_min": [
+        -0.0154645424336195,
+        -0.8030252456665039,
+        0.3074301481246948
+      ],
+      "mesh_bounds_max": [
+        2.1402170658111572,
+        0.8031657934188843,
+        1.7250585556030273
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "FEET",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_FEET.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_FEET.CSY",
+      "slim_glb": "../slim/characters/H_M_FEET.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 78,
+      "mesh_bounds_min": [
+        0.36938536167144775,
+        -1.2099617719650269,
+        -1.3503957986831665
+      ],
+      "mesh_bounds_max": [
+        4.673707485198975,
+        1.2098278999328613,
+        2.705472946166992
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "LEGS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_LEGS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_LEGS.CSY",
+      "slim_glb": "../slim/characters/H_M_LEGS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 73,
+      "mesh_bounds_min": [
+        -1.9723142385482788,
+        -1.6340525150299072,
+        -1.37983238697052
+      ],
+      "mesh_bounds_max": [
+        4.881094932556152,
+        1.6341948509216309,
+        1.7255079746246338
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "1",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_HAIR1.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_HAIR1.CSY",
+      "slim_glb": "../slim/characters/H_M_HAIR1.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 64,
+      "mesh_bounds_min": [
+        0.5112602114677429,
+        -0.927365779876709,
+        -0.8786953091621399
+      ],
+      "mesh_bounds_max": [
+        2.61165714263916,
+        0.8643715381622314,
+        1.5404762029647827
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "2",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_HAIR2.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_HAIR2.CSY",
+      "slim_glb": "../slim/characters/H_M_HAIR2.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 232,
+      "mesh_bounds_min": [
+        -0.3442500829696655,
+        -1.3739181756973267,
+        -1.295251488685608
+      ],
+      "mesh_bounds_max": [
+        2.61165714263916,
+        1.364677906036377,
+        1.5404762029647827
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "3",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_HAIR3.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_HAIR3.CSY",
+      "slim_glb": "../slim/characters/H_M_HAIR3.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 232,
+      "mesh_bounds_min": [
+        -0.8020895719528198,
+        -1.3739181756973267,
+        -1.9011694192886353
+      ],
+      "mesh_bounds_max": [
+        2.61165714263916,
+        1.364677906036377,
+        1.6337283849716187
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "4",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_HAIR4.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_HAIR4.CSY",
+      "slim_glb": "../slim/characters/H_M_HAIR4.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 139,
+      "mesh_bounds_min": [
+        0.19906388223171234,
+        -1.112600326538086,
+        -1.1206908226013184
+      ],
+      "mesh_bounds_max": [
+        2.5706262588500977,
+        1.0625591278076172,
+        1.5404751300811768
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "5",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_HAIR5.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_HAIR5.CSY",
+      "slim_glb": "../slim/characters/H_M_HAIR5.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 127,
+      "mesh_bounds_min": [
+        -0.7242246866226196,
+        -1.747293472290039,
+        -1.7657281160354614
+      ],
+      "mesh_bounds_max": [
+        2.570622444152832,
+        1.7474324703216553,
+        1.5404748916625977
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "11",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_HAIR11.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_HAIR11.CSY",
+      "slim_glb": "../slim/characters/H_M_HAIR11.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 64,
+      "mesh_bounds_min": [
+        0.5112602114677429,
+        -0.927365779876709,
+        -0.8786953091621399
+      ],
+      "mesh_bounds_max": [
+        2.61165714263916,
+        0.8643715381622314,
+        1.5404762029647827
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "12",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_HAIR12.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_HAIR12.CSY",
+      "slim_glb": "../slim/characters/H_M_HAIR12.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 232,
+      "mesh_bounds_min": [
+        -0.3442500829696655,
+        -1.3739181756973267,
+        -1.295251488685608
+      ],
+      "mesh_bounds_max": [
+        2.61165714263916,
+        1.364677906036377,
+        1.5404762029647827
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "13",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_HAIR13.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_HAIR13.CSY",
+      "slim_glb": "../slim/characters/H_M_HAIR13.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 232,
+      "mesh_bounds_min": [
+        -0.8020895719528198,
+        -1.3739181756973267,
+        -1.9011694192886353
+      ],
+      "mesh_bounds_max": [
+        2.61165714263916,
+        1.364677906036377,
+        1.6337283849716187
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "14",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_HAIR14.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_HAIR14.CSY",
+      "slim_glb": "../slim/characters/H_M_HAIR14.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 139,
+      "mesh_bounds_min": [
+        0.19906197488307953,
+        -1.1126283407211304,
+        -1.1207188367843628
+      ],
+      "mesh_bounds_max": [
+        2.570622444152832,
+        1.0625859498977661,
+        1.540513515472412
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "15",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_M_HAIR15.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_M_HAIR15.CSY",
+      "slim_glb": "../slim/characters/H_M_HAIR15.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 127,
+      "mesh_bounds_min": [
+        -0.7242246866226196,
+        -1.747293472290039,
+        -1.7657281160354614
+      ],
+      "mesh_bounds_max": [
+        2.570622444152832,
+        1.7474324703216553,
+        1.5404748916625977
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "ARMS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_ARMS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_ARMS.CSY",
+      "slim_glb": "../slim/characters/H_W_ARMS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 200,
+      "mesh_bounds_min": [
+        -0.07778510451316833,
+        -0.6348651051521301,
+        -0.470398873090744
+      ],
+      "mesh_bounds_max": [
+        2.4813499450683594,
+        0.6334469318389893,
+        0.5996385216712952
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "BODY",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_BODY.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_BODY.CSY",
+      "slim_glb": "../slim/characters/H_W_BODY.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -0.8742055892944336,
+        -1.238938331604004,
+        -0.8426638245582581
+      ],
+      "mesh_bounds_max": [
+        1.6821682453155518,
+        1.2316241264343262,
+        1.2991676330566406
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "FACE",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_FACE.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_FACE.CSY",
+      "slim_glb": "../slim/characters/H_W_FACE.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 52,
+      "mesh_bounds_min": [
+        -0.06025385111570358,
+        -0.5465519428253174,
+        0.05472810938954353
+      ],
+      "mesh_bounds_max": [
+        1.8151167631149292,
+        0.6135830283164978,
+        0.9507006406784058
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "FEET",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_FEET.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_FEET.CSY",
+      "slim_glb": "../slim/characters/H_W_FEET.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 60,
+      "mesh_bounds_min": [
+        0.3868703246116638,
+        -0.8338635563850403,
+        -1.0262387990951538
+      ],
+      "mesh_bounds_max": [
+        4.215653896331787,
+        0.8407732844352722,
+        2.0571022033691406
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "LEGS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_LEGS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_LEGS.CSY",
+      "slim_glb": "../slim/characters/H_W_LEGS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 127,
+      "mesh_bounds_min": [
+        -1.6487470865249634,
+        -1.5944498777389526,
+        -1.1855531930923462
+      ],
+      "mesh_bounds_max": [
+        4.706483364105225,
+        1.587135672569275,
+        1.1437550783157349
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "1",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_HAIR1.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_HAIR1.CSY",
+      "slim_glb": "../slim/characters/H_W_HAIR1.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 50,
+      "mesh_bounds_min": [
+        -0.7260250449180603,
+        -1.0004034042358398,
+        -1.3137472867965698
+      ],
+      "mesh_bounds_max": [
+        2.2998955249786377,
+        0.8588401079177856,
+        1.3087575435638428
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "2",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_HAIR2.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_HAIR2.CSY",
+      "slim_glb": "../slim/characters/H_W_HAIR2.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 67,
+      "mesh_bounds_min": [
+        -1.7982945442199707,
+        -0.8252161145210266,
+        -1.4877043962478638
+      ],
+      "mesh_bounds_max": [
+        2.2679316997528076,
+        0.7277807593345642,
+        1.1906745433807373
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "3",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_HAIR3.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_HAIR3.CSY",
+      "slim_glb": "../slim/characters/H_W_HAIR3.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 43,
+      "mesh_bounds_min": [
+        -0.22902755439281464,
+        -0.698783814907074,
+        -1.1814545392990112
+      ],
+      "mesh_bounds_max": [
+        2.2430005073547363,
+        0.706788182258606,
+        1.0857079029083252
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "4",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_HAIR4.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_HAIR4.CSY",
+      "slim_glb": "../slim/characters/H_W_HAIR4.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 68,
+      "mesh_bounds_min": [
+        -0.2789366841316223,
+        -1.0011869668960571,
+        -1.2779161930084229
+      ],
+      "mesh_bounds_max": [
+        2.2013659477233887,
+        0.8030717372894287,
+        1.0400269031524658
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "5",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_HAIR5.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_HAIR5.CSY",
+      "slim_glb": "../slim/characters/H_W_HAIR5.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        0.22079825401306152,
+        -0.9437991976737976,
+        -1.5014994144439697
+      ],
+      "mesh_bounds_max": [
+        2.243833303451538,
+        1.0355873107910156,
+        0.9510312080383301
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "11",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_HAIR11.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_HAIR11.CSY",
+      "slim_glb": "../slim/characters/H_W_HAIR11.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 50,
+      "mesh_bounds_min": [
+        -0.7260250449180603,
+        -1.0004034042358398,
+        -1.3137471675872803
+      ],
+      "mesh_bounds_max": [
+        2.2998955249786377,
+        0.8588401079177856,
+        1.3087576627731323
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "12",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_HAIR12.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_HAIR12.CSY",
+      "slim_glb": "../slim/characters/H_W_HAIR12.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 43,
+      "mesh_bounds_min": [
+        -0.2290250062942505,
+        -0.6987150311470032,
+        -1.1813385486602783
+      ],
+      "mesh_bounds_max": [
+        2.243237018585205,
+        0.7067188024520874,
+        1.0856014490127563
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "13",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_HAIR13.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_HAIR13.CSY",
+      "slim_glb": "../slim/characters/H_W_HAIR13.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 67,
+      "mesh_bounds_min": [
+        -1.7982935905456543,
+        -0.8252160549163818,
+        -1.4877047538757324
+      ],
+      "mesh_bounds_max": [
+        2.2679316997528076,
+        0.7277806997299194,
+        1.1906750202178955
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "14",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_HAIR14.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_HAIR14.CSY",
+      "slim_glb": "../slim/characters/H_W_HAIR14.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 68,
+      "mesh_bounds_min": [
+        -0.2789366841316223,
+        -1.0011869668960571,
+        -1.2779161930084229
+      ],
+      "mesh_bounds_max": [
+        2.2013659477233887,
+        0.8030717968940735,
+        1.0400269031524658
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "H",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "15",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/H_W_HAIR15.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/H_W_HAIR15.CSY",
+      "slim_glb": "../slim/characters/H_W_HAIR15.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        0.22079823911190033,
+        -0.9437991976737976,
+        -1.5014994144439697
+      ],
+      "mesh_bounds_max": [
+        2.243833303451538,
+        1.0355873107910156,
+        0.9510312080383301
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "ARMS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_ARMS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_ARMS.CSY",
+      "slim_glb": "../slim/characters/K_M_ARMS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 122,
+      "mesh_bounds_min": [
+        -0.0719166249036789,
+        -0.8992170691490173,
+        -0.8665900230407715
+      ],
+      "mesh_bounds_max": [
+        3.392411708831787,
+        0.8992241024971008,
+        0.992857813835144
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "BODY",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_BODY.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_BODY.CSY",
+      "slim_glb": "../slim/characters/K_M_BODY.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 62,
+      "mesh_bounds_min": [
+        -0.10112813115119934,
+        -1.60789954662323,
+        -1.4719057083129883
+      ],
+      "mesh_bounds_max": [
+        3.266580581665039,
+        1.6078484058380127,
+        1.6155357360839844
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "FACE",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_FACE.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_FACE.CSY",
+      "slim_glb": "../slim/characters/K_M_FACE.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 32,
+      "mesh_bounds_min": [
+        -0.1100170910358429,
+        -0.7859082818031311,
+        -0.09768910706043243
+      ],
+      "mesh_bounds_max": [
+        2.094906806945801,
+        0.7858607769012451,
+        1.337235450744629
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "FEET",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_FEET.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_FEET.CSY",
+      "slim_glb": "../slim/characters/K_M_FEET.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 90,
+      "mesh_bounds_min": [
+        0.15315324068069458,
+        -0.8888024091720581,
+        -1.027471899986267
+      ],
+      "mesh_bounds_max": [
+        4.623366355895996,
+        0.8888574242591858,
+        2.9996860027313232
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "LEGS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_LEGS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_LEGS.CSY",
+      "slim_glb": "../slim/characters/K_M_LEGS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 66,
+      "mesh_bounds_min": [
+        -1.8942331075668335,
+        -1.4091438055038452,
+        -1.1792720556259155
+      ],
+      "mesh_bounds_max": [
+        5.0840935707092285,
+        1.4090983867645264,
+        1.4607865810394287
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "1",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_HAIR1.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_HAIR1.CSY",
+      "slim_glb": "../slim/characters/K_M_HAIR1.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 61,
+      "mesh_bounds_min": [
+        -0.06269264221191406,
+        -1.1009035110473633,
+        -1.5989415645599365
+      ],
+      "mesh_bounds_max": [
+        3.365635633468628,
+        1.0993069410324097,
+        1.1956332921981812
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "2",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_HAIR2.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_HAIR2.CSY",
+      "slim_glb": "../slim/characters/K_M_HAIR2.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 47,
+      "mesh_bounds_min": [
+        -0.24270498752593994,
+        -1.1800037622451782,
+        -1.4907867908477783
+      ],
+      "mesh_bounds_max": [
+        2.7300755977630615,
+        1.1789863109588623,
+        1.476324200630188
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "3",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_HAIR3.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_HAIR3.CSY",
+      "slim_glb": "../slim/characters/K_M_HAIR3.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 57,
+      "mesh_bounds_min": [
+        -1.1841498613357544,
+        -1.1087638139724731,
+        -1.713133454322815
+      ],
+      "mesh_bounds_max": [
+        3.0887339115142822,
+        1.1082979440689087,
+        1.1226576566696167
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "4",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_HAIR4.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_HAIR4.CSY",
+      "slim_glb": "../slim/characters/K_M_HAIR4.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 148,
+      "mesh_bounds_min": [
+        -0.1921718716621399,
+        -1.1126008033752441,
+        -1.575097680091858
+      ],
+      "mesh_bounds_max": [
+        2.4324965476989746,
+        1.0625585317611694,
+        1.1903209686279297
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "5",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_HAIR5.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_HAIR5.CSY",
+      "slim_glb": "../slim/characters/K_M_HAIR5.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 134,
+      "mesh_bounds_min": [
+        -0.6727283000946045,
+        -1.7472929954528809,
+        -2.062793731689453
+      ],
+      "mesh_bounds_max": [
+        2.5706191062927246,
+        1.7474316358566284,
+        1.243408203125
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "11",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_HAIR11.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_HAIR11.CSY",
+      "slim_glb": "../slim/characters/K_M_HAIR11.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 61,
+      "mesh_bounds_min": [
+        -0.2647400498390198,
+        -1.1136391162872314,
+        -1.5528099536895752
+      ],
+      "mesh_bounds_max": [
+        3.163588285446167,
+        1.0865713357925415,
+        1.2417649030685425
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "12",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_HAIR12.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_HAIR12.CSY",
+      "slim_glb": "../slim/characters/K_M_HAIR12.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 47,
+      "mesh_bounds_min": [
+        -0.24270498752593994,
+        -1.1800037622451782,
+        -1.4907867908477783
+      ],
+      "mesh_bounds_max": [
+        2.7300755977630615,
+        1.1789863109588623,
+        1.476324200630188
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "13",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_HAIR13.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_HAIR13.CSY",
+      "slim_glb": "../slim/characters/K_M_HAIR13.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 57,
+      "mesh_bounds_min": [
+        -1.1841479539871216,
+        -1.1087638139724731,
+        -1.7131333351135254
+      ],
+      "mesh_bounds_max": [
+        3.0887339115142822,
+        1.1082979440689087,
+        1.1226574182510376
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "14",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_HAIR14.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_HAIR14.CSY",
+      "slim_glb": "../slim/characters/K_M_HAIR14.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 148,
+      "mesh_bounds_min": [
+        -0.1921718716621399,
+        -1.1126008033752441,
+        -1.575097680091858
+      ],
+      "mesh_bounds_max": [
+        2.4324965476989746,
+        1.0625585317611694,
+        1.1903209686279297
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "M",
+      "bagian": "HAIR",
+      "variant": "15",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_M_HAIR15.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_M_HAIR15.CSY",
+      "slim_glb": "../slim/characters/K_M_HAIR15.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 134,
+      "mesh_bounds_min": [
+        -0.6727283000946045,
+        -1.7472929954528809,
+        -2.062793731689453
+      ],
+      "mesh_bounds_max": [
+        2.5706191062927246,
+        1.7474316358566284,
+        1.243408203125
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "ARMS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_ARMS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_ARMS.CSY",
+      "slim_glb": "../slim/characters/K_W_ARMS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 140,
+      "mesh_bounds_min": [
+        0.023173639550805092,
+        -0.5762173533439636,
+        -0.5973840355873108
+      ],
+      "mesh_bounds_max": [
+        2.540504217147827,
+        0.5736480355262756,
+        0.5703460574150085
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "BODY",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_BODY.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_BODY.CSY",
+      "slim_glb": "../slim/characters/K_W_BODY.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 84,
+      "mesh_bounds_min": [
+        -0.1261158436536789,
+        -1.3273742198944092,
+        -0.8116739988327026
+      ],
+      "mesh_bounds_max": [
+        2.406787633895874,
+        1.3223439455032349,
+        1.3405719995498657
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "FACE",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_FACE.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_FACE.CSY",
+      "slim_glb": "../slim/characters/K_W_FACE.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 39,
+      "mesh_bounds_min": [
+        -0.1982697993516922,
+        -0.6354838013648987,
+        -0.049683764576911926
+      ],
+      "mesh_bounds_max": [
+        1.674170970916748,
+        0.6672281622886658,
+        1.001386284828186
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "FEET",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_FEET.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_FEET.CSY",
+      "slim_glb": "../slim/characters/K_W_FEET.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 66,
+      "mesh_bounds_min": [
+        0.12381985038518906,
+        -0.7927401661872864,
+        -1.096958875656128
+      ],
+      "mesh_bounds_max": [
+        4.606209754943848,
+        0.7977069616317749,
+        2.0001564025878906
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "LEGS",
+      "variant": null,
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_LEGS.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_LEGS.CSY",
+      "slim_glb": "../slim/characters/K_W_LEGS.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 118,
+      "mesh_bounds_min": [
+        -1.6452152729034424,
+        -1.587734341621399,
+        -1.0827608108520508
+      ],
+      "mesh_bounds_max": [
+        4.5969109535217285,
+        1.5827044248580933,
+        1.1415596008300781
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "1",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_HAIR1.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_HAIR1.CSY",
+      "slim_glb": "../slim/characters/K_W_HAIR1.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -1.050344705581665,
+        -0.8627514839172363,
+        -1.421190857887268
+      ],
+      "mesh_bounds_max": [
+        2.141648530960083,
+        0.8988298773765564,
+        0.9362443089485168
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "2",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_HAIR2.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_HAIR2.CSY",
+      "slim_glb": "../slim/characters/K_W_HAIR2.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 100,
+      "mesh_bounds_min": [
+        -0.9644619822502136,
+        -0.9641297459602356,
+        -0.9588255882263184
+      ],
+      "mesh_bounds_max": [
+        2.080479621887207,
+        1.2465002536773682,
+        1.096417784690857
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "3",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_HAIR3.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_HAIR3.CSY",
+      "slim_glb": "../slim/characters/K_W_HAIR3.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 52,
+      "mesh_bounds_min": [
+        -1.6905248165130615,
+        -1.0928171873092651,
+        -2.4972994327545166
+      ],
+      "mesh_bounds_max": [
+        2.1600725650787354,
+        1.1278995275497437,
+        1.076833724975586
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "4",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_HAIR4.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_HAIR4.CSY",
+      "slim_glb": "../slim/characters/K_W_HAIR4.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 68,
+      "mesh_bounds_min": [
+        -0.41365349292755127,
+        -0.9081935286521912,
+        -1.2822511196136475
+      ],
+      "mesh_bounds_max": [
+        1.9579499959945679,
+        0.7727819681167603,
+        1.0356918573379517
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "5",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_HAIR5.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_HAIR5.CSY",
+      "slim_glb": "../slim/characters/K_W_HAIR5.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -0.09156778454780579,
+        -0.9714833498001099,
+        -1.5635862350463867
+      ],
+      "mesh_bounds_max": [
+        2.2792651653289795,
+        1.0079033374786377,
+        0.9619401693344116
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "11",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_HAIR11.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_HAIR11.CSY",
+      "slim_glb": "../slim/characters/K_W_HAIR11.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -1.0503448247909546,
+        -0.8627514839172363,
+        -1.4211907386779785
+      ],
+      "mesh_bounds_max": [
+        2.141648530960083,
+        0.8988298773765564,
+        0.9362443089485168
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "12",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_HAIR12.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_HAIR12.CSY",
+      "slim_glb": "../slim/characters/K_W_HAIR12.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 100,
+      "mesh_bounds_min": [
+        -0.9644619822502136,
+        -0.9641297459602356,
+        -0.9588256478309631
+      ],
+      "mesh_bounds_max": [
+        2.080479383468628,
+        1.2465002536773682,
+        1.096417784690857
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "13",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_HAIR13.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_HAIR13.CSY",
+      "slim_glb": "../slim/characters/K_W_HAIR13.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 52,
+      "mesh_bounds_min": [
+        -1.6905248165130615,
+        -1.0928171873092651,
+        -2.4972994327545166
+      ],
+      "mesh_bounds_max": [
+        2.1600725650787354,
+        1.1278995275497437,
+        1.076833724975586
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "14",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_HAIR14.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_HAIR14.CSY",
+      "slim_glb": "../slim/characters/K_W_HAIR14.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 68,
+      "mesh_bounds_min": [
+        -0.41365349292755127,
+        -0.9081935286521912,
+        -1.2822511196136475
+      ],
+      "mesh_bounds_max": [
+        1.9579499959945679,
+        0.7727819681167603,
+        1.035691738128662
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    },
+    {
+      "ras": "K",
+      "kelamin": "W",
+      "bagian": "HAIR",
+      "variant": "15",
+      "translasi": [
+        0,
+        0,
+        0
+      ],
+      "rotasi": [
+        0,
+        0,
+        0
+      ],
+      "skala": [
+        1,
+        1,
+        1
+      ],
+      "source_glb": "C:/Dev/laghaim maxim/aset laghaim/blender glb/models_glb/characters/K_W_HAIR15.glb",
+      "source_csy": "C:/Dev/laghaim maxim/aset laghaim/Data/Character/Csy/K_W_HAIR15.CSY",
+      "slim_glb": "../slim/characters/K_W_HAIR15.glb",
+      "transform_source": "implicit_GLTF_identity",
+      "vertex_count": 70,
+      "mesh_bounds_min": [
+        -0.09156779944896698,
+        -0.9714833498001099,
+        -1.5635862350463867
+      ],
+      "mesh_bounds_max": [
+        2.2792651653289795,
+        1.0079033374786377,
+        0.9619401693344116
+      ],
+      "positions_identical_in_slim": true,
+      "relative_body_origin": "unknown; no body-relative attachment/pose metadata in GLB",
+      "status": "root_transform_and_vertex_positions_preserved"
+    }
+  ],
+  "unclassified_character_glbs": [
+    "PM_FA00.glb",
+    "PM_HN00.glb",
+    "PM_HR01.glb",
+    "PM_HR02.glb",
+    "PM_HR03.glb",
+    "PM_HR04.glb",
+    "PM_HR05.glb",
+    "PM_HR11.glb",
+    "PM_HR12.glb",
+    "PM_HR13.glb",
+    "PM_HR14.glb",
+    "PM_HR15.glb",
+    "PM_UB00.glb",
+    "PW_FA00.glb",
+    "PW_FT00.glb",
+    "PW_HN00.glb",
+    "PW_HR00.glb",
+    "PW_HR01.glb",
+    "PW_HR02.glb",
+    "PW_HR03.glb",
+    "PW_HR04.glb",
+    "PW_HR05.glb",
+    "PW_HR11.glb",
+    "PW_HR12.glb",
+    "PW_HR13.glb",
+    "PW_HR14.glb",
+    "PW_HR15.glb",
+    "PW_LB00.glb",
+    "PW_UB00.glb"
+  ]
+}

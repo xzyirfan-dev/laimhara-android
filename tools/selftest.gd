@@ -157,4 +157,18 @@ func _ready() -> void:
 	g.add_faction_rep("karnok", 120)
 	print("Progression logic: craft=", crafted, " mount=", mounted, " event=", g.world_event, " combo_bonus=", g.combo_bonus(), " faction_lv=", g.faction_level("karnok"))
 	g.save_game()
+	# 11) Verifikasi aset final: catalog data.zip dan resource GLB yang dipasang.
+	var cat_item: Dictionary = AssetCatalog.pick_item("helm", 10)
+	var cat_path := AssetCatalog.model_path(cat_item)
+	var glb_paths := [
+		"res://assets/models/A_M_BODY.glb",
+		"res://assets/models/items/AM_Item0006.glb",
+		"res://assets/models/monsters/monster_1025.glb",
+		"res://assets/models/Warehouse_Pet_003.glb"
+	]
+	var glb_ok := 0
+	for path in glb_paths:
+		if ResourceLoader.load(path) != null:
+			glb_ok += 1
+	print("Asset catalog: id=", int(cat_item.get("id", 0)), " path=", cat_path, " GLB=", glb_ok, "/", glb_paths.size())
 	get_tree().quit()
